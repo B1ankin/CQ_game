@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: 448dce330c986af49bd153405a13b80e
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      74: -1313636315244759234
+    second: Cube.056_Baked|Cube.176Action
+  - first:
+      74: 375437464992356144
+    second: Cube.056_Baked|Cube.179Action
+  - first:
+      74: -877517406741068591
+    second: Cube.056_Baked|Cube.244Action
+  - first:
+      74: 6503531401866951836
+    second: Cube.056_Baked|Cube.244Action.002
+  - first:
+      74: 9115909623425558809
+    second: Cube.056_Baked|Cube.377Action.001
+  - first:
+      74: 3575695900993196295
+    second: Cube.056_Baked|Cube.378Action
+  - first:
+      74: -853761486869791517
+    second: Cube.056_Baked|Cube.378Action.001
+  - first:
+      74: -1619452995278231781
+    second: Cube.056_Baked|Cube.378Action.002
+  - first:
+      74: 7406877936082212712
+    second: Cube.056_Baked|Cube.378Action.003
+  - first:
+      74: -6756307647025850001
+    second: Cube.056_Baked|Cube.378Action.004
+  - first:
+      74: -8450658201384748834
+    second: Cube.056_Baked|Cube.378Action.005
+  - first:
+      74: 4234317688434872782
+    second: Cube.056_Baked|Cube.378Action.006
+  - first:
+      74: 5362283378467758379
+    second: Cube.056_Baked|Cube.378Action.007
+  - first:
+      74: 2626749935721800442
+    second: Cube.056_Baked|Cube.378Action.008
+  - first:
+      74: -2798053429415269306
+    second: Cube.056_Baked|Cube.378Action.009
+  - first:
+      74: -2116714730491670579
+    second: Cube.056_Baked|Cube.378Action.010
+  - first:
+      74: -3874274772921970528
+    second: Cube.056_Baked|Cube.378Action.011
+  - first:
+      74: -3508793799245550766
+    second: Cube.056_Baked|Cube.378Action.012
+  - first:
+      74: 1532522388894127673
+    second: Cube.056_Baked|Cube.378Action.013
+  - first:
+      74: -255191470771391813
+    second: Cube.056_Baked|Cube.378Action.014
+  - first:
+      74: -2043486216764564775
+    second: Cube.056_Baked|Cube.378Action.015
+  - first:
+      74: -4621686436485976466
+    second: Cube.056_Baked|Cube.378Action.018
+  - first:
+      74: -1854593662324532851
+    second: Cube.056_Baked|Cube.378Action.020
+  - first:
+      74: -9154184148806393147
+    second: Cube.056_Baked|Cube.378Action.022
+  - first:
+      74: -2154465357975224163
+    second: Cube.056_Baked|Cube.378Action.024
+  - first:
+      74: 2792960429603540974
+    second: Cube.056_Baked|Cube.378Action.026
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

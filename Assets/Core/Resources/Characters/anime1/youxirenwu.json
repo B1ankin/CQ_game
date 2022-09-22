@@ -1,0 +1,160 @@
+{ "skeleton": { "images": "images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "图层 13", "bone": "root" },
+	{ "name": "jiantong", "bone": "root", "attachment": "jiantong" },
+	{ "name": "houfa", "bone": "root", "attachment": "houfa" },
+	{ "name": "xiapifeng", "bone": "root", "attachment": "xiapifeng" },
+	{ "name": "zuoxiaobi", "bone": "root", "attachment": "zuoxiaobi" },
+	{ "name": "zuodabi", "bone": "root", "attachment": "zuodabi" },
+	{ "name": "youshou", "bone": "root", "attachment": "youshou" },
+	{ "name": "youxiaobi", "bone": "root", "attachment": "youxiaobi" },
+	{ "name": "youdabi", "bone": "root", "attachment": "youdabi" },
+	{ "name": "paodongzuojiao", "bone": "root", "attachment": "paodongzuojiao" },
+	{ "name": "paodongzuoxiaotui", "bone": "root", "attachment": "paodongzuoxiaotui" },
+	{ "name": "paodongzuodatui", "bone": "root", "attachment": "paodongzuodatui" },
+	{ "name": "paodongyoujiao", "bone": "root", "attachment": "paodongyoujiao" },
+	{ "name": "paodongyouxiaotui", "bone": "root", "attachment": "paodongyouxiaotui" },
+	{ "name": "paodongyoudatui", "bone": "root", "attachment": "paodongyoudatui" },
+	{ "name": "zhanliyoujiao", "bone": "root", "attachment": "zhanliyoujiao" },
+	{ "name": "zhanliyouxiaotui", "bone": "root", "attachment": "zhanliyouxiaotui" },
+	{ "name": "zhanliyoudatui", "bone": "root", "attachment": "zhanliyoudatui" },
+	{ "name": "zhanlizuojiao", "bone": "root", "attachment": "zhanlizuojiao" },
+	{ "name": "zhanlizuoxiaotui", "bone": "root", "attachment": "zhanlizuoxiaotui" },
+	{ "name": "zhanlizuodatui", "bone": "root", "attachment": "zhanlizuodatui" },
+	{ "name": "shangbanshen", "bone": "root", "attachment": "shangbanshen" },
+	{ "name": "xiabanshen", "bone": "root", "attachment": "xiabanshen" },
+	{ "name": "tou", "bone": "root", "attachment": "tou" },
+	{ "name": "tongkubiaoqin", "bone": "root", "attachment": "tongkubiaoqin" },
+	{ "name": "shangpifeng", "bone": "root", "attachment": "shangpifeng" },
+	{ "name": "zhongfa", "bone": "root", "attachment": "zhongfa" },
+	{ "name": "fasi4", "bone": "root", "attachment": "fasi4" },
+	{ "name": "fasi3", "bone": "root", "attachment": "fasi3" },
+	{ "name": "fasi1", "bone": "root", "attachment": "fasi1" },
+	{ "name": "qianfa", "bone": "root", "attachment": "qianfa" },
+	{ "name": "fasi2", "bone": "root", "attachment": "fasi2" },
+	{ "name": "toushi", "bone": "root", "attachment": "toushi" },
+	{ "name": "gong", "bone": "root", "attachment": "gong" },
+	{ "name": "zuoshou", "bone": "root", "attachment": "zuoshou" },
+	{ "name": "hu", "bone": "root", "attachment": "hu" },
+	{ "name": "图层 3", "bone": "root" }
+],
+"skins": {
+	"default": {
+		"图层 13": {
+			"图层 13": { "x": 1185.5, "y": -1670.5, "width": 2373, "height": 3343 }
+		},
+		"jiantong": {
+			"jiantong": { "x": 1360.5, "y": -582.5, "width": 367, "height": 853 }
+		},
+		"houfa": {
+			"houfa": { "x": 1240.5, "y": -582.5, "width": 641, "height": 827 }
+		},
+		"xiapifeng": {
+			"xiapifeng": { "x": 1350, "y": -1790, "width": 1540, "height": 2262 }
+		},
+		"zuoxiaobi": {
+			"zuoxiaobi": { "x": 1452, "y": -1348, "width": 222, "height": 490 }
+		},
+		"zuodabi": {
+			"zuodabi": { "x": 1321.5, "y": -921.5, "width": 329, "height": 691 }
+		},
+		"youshou": {
+			"youshou": { "x": 629, "y": -1631.5, "width": 114, "height": 267 }
+		},
+		"youxiaobi": {
+			"youxiaobi": { "x": 736.5, "y": -1335, "width": 239, "height": 498 }
+		},
+		"youdabi": {
+			"youdabi": { "x": 874, "y": -918.5, "width": 300, "height": 609 }
+		},
+		"paodongzuojiao": {
+			"paodongzuojiao": { "x": 1750.5, "y": -2881.5, "width": 273, "height": 407 }
+		},
+		"paodongzuoxiaotui": {
+			"paodongzuoxiaotui": { "x": 1311, "y": -2533, "width": 900, "height": 1044 }
+		},
+		"paodongzuodatui": {
+			"paodongzuodatui": { "x": 958.5, "y": -1817.5, "width": 425, "height": 1007 }
+		},
+		"paodongyoujiao": {
+			"paodongyoujiao": { "x": 1444.5, "y": -2115, "width": 257, "height": 412 }
+		},
+		"paodongyouxiaotui": {
+			"paodongyouxiaotui": { "x": 999, "y": -2126, "width": 1004, "height": 400 }
+		},
+		"paodongyoudatui": {
+			"paodongyoudatui": { "x": 880.5, "y": -1865.5, "width": 819, "height": 781 }
+		},
+		"zhanliyoujiao": {
+			"zhanliyoujiao": { "x": 633, "y": -2999.5, "width": 362, "height": 311 }
+		},
+		"zhanliyouxiaotui": {
+			"zhanliyouxiaotui": { "x": 790.5, "y": -2601, "width": 267, "height": 956 }
+		},
+		"zhanliyoudatui": {
+			"zhanliyoudatui": { "x": 829, "y": -1969.5, "width": 324, "height": 1239 }
+		},
+		"zhanlizuojiao": {
+			"zhanlizuojiao": { "x": 1350, "y": -3040.5, "width": 198, "height": 321 }
+		},
+		"zhanlizuoxiaotui": {
+			"zhanlizuoxiaotui": { "x": 1240, "y": -2649.5, "width": 260, "height": 701 }
+		},
+		"zhanlizuodatui": {
+			"zhanlizuodatui": { "x": 1104.5, "y": -1954, "width": 479, "height": 1054 }
+		},
+		"shangbanshen": {
+			"shangbanshen": { "x": 1151, "y": -849.5, "width": 678, "height": 689 }
+		},
+		"xiabanshen": {
+			"xiabanshen": { "x": 1009, "y": -1364, "width": 676, "height": 870 }
+		},
+		"tou": {
+			"tou": { "x": 1002.5, "y": -390, "width": 363, "height": 392 }
+		},
+		"tongkubiaoqin": {
+			"tongkubiaoqin": { "x": 1035, "y": -402.5, "width": 246, "height": 357 }
+		},
+		"shangpifeng": {
+			"shangpifeng": { "x": 1020.5, "y": -863, "width": 695, "height": 790 }
+		},
+		"zhongfa": {
+			"zhongfa": { "x": 1058.5, "y": -637, "width": 385, "height": 918 }
+		},
+		"fasi4": {
+			"fasi4": { "x": 925, "y": -445.5, "width": 100, "height": 415 }
+		},
+		"fasi3": {
+			"fasi3": { "x": 1007, "y": -385.5, "width": 96, "height": 325 }
+		},
+		"fasi1": {
+			"fasi1": { "x": 938, "y": -339.5, "width": 286, "height": 237 }
+		},
+		"qianfa": {
+			"qianfa": { "x": 1057, "y": -404, "width": 412, "height": 366 }
+		},
+		"fasi2": {
+			"fasi2": { "x": 891.5, "y": -416.5, "width": 141, "height": 363 }
+		},
+		"toushi": {
+			"toushi": { "x": 1015.5, "y": -307.5, "width": 255, "height": 173 }
+		},
+		"gong": {
+			"gong": { "x": 1208, "y": -1605.5, "width": 2268, "height": 1365 }
+		},
+		"zuoshou": {
+			"zuoshou": { "x": 1500.5, "y": -1640, "width": 181, "height": 252 }
+		},
+		"hu": {
+			"hu": { "x": 1183.5, "y": -1323.5, "width": 163, "height": 393 }
+		},
+		"图层 3": {
+			"图层 3": { "x": 1185.5, "y": -1670.5, "width": 2373, "height": 3343 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
