@@ -8,10 +8,10 @@ using UnityEngine.EventSystems;
 /// Token slot that store a single token
 /// 
 /// </summary>
-public class TokenUI : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class TokenUI : MonoBehaviour, IPointerDownHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     // Start is called before the first frame update
-    [SerializeField] private Canvas canvas;
+    private Canvas canvas;
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] Token token;
     public Text tokenName;
@@ -22,14 +22,45 @@ public class TokenUI : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler,
 
     public void UpdateToken(Token token )
     {
-        GetComponent<Image>().color = Color.red;
+        if (token.GetType() == typeof(ActionToken))
+        {
+            GetComponent<Image>().color = Color.red;
+            var ttoken = (ActionToken)token;
+            string tokentext = "";
+            tokentext += $"命中: {ttoken.acc}\n";
+            tokentext += $"伤害: {ttoken.dmgMulti}\n";
+            tokentext += $"范围类型: {ttoken.shape}\n";
+            tokenEffectsContainer.text = tokentext;
+
+        }
+        else if (token.GetType() == typeof(SupportToken))
+        {
+            GetComponent<Image>().color = Color.yellow;
+            var ttoken = (SupportToken)token;
+            tokenEffectsContainer.text = ttoken.tokenEffects.ToString();
+
+        }
+        else if (token.GetType() == typeof(SpecialToken))
+        {
+            GetComponent<Image>().color = Color.green;
+            var ttoken = (SpecialToken)token;
+            string tokentext = "";
+            tokentext += $"命中: {ttoken.acc}\n";
+            tokentext += $"类型: {ttoken.itemType}\n";
+            tokentext += $"范围类型: {ttoken.effectShape}\n";
+            tokentext += $"目标类型: {ttoken.targetingType}\n";
+            tokentext += ttoken.tokenEffects.ToString();
+
+            tokenEffectsContainer.text = tokentext;
+
+        }
         this.token = token;
         tokenName.text = token.tokenName;
-        tokenEffectsContainer.text = token.ToString();
     }
 
     private void Start()
     {
+        canvas = GameObject.Find("mainCanvas").GetComponent<Canvas>();
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         oldPos = new Vector3();
@@ -41,13 +72,17 @@ public class TokenUI : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler,
     }
 
 
-
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        // in pool, move to queue
+        Debug.Log("clicked");
+        // in queue move to pool
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         //if in queue, back to inventory
         // else if in inventory, and queue is not empty -- > add to pool at end
-        Debug.Log("");
     }
 
     public void OnPointerEnter(PointerEventData eventData)

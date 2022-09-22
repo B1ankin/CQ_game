@@ -11,6 +11,9 @@ using UnityEngine.UI;
 /// </summary>
 public class BattleController : MonoBehaviour
 {
+    private static BattleController _instance;
+    public static BattleController Instance { get { return _instance; } }
+
 
     public GameObject BattleCharacterModel;
     [SerializeField] private LayerMask layermask;
@@ -42,15 +45,26 @@ public class BattleController : MonoBehaviour
     private List<BattleCharacter> CharacterList =new List<BattleCharacter>();
 
     //Token 
-    private List<Token> tokenQueue = new List<Token>();
+    private List<Token> tokenQueue;
     private int tokenTargetDirection = 0;
 
-
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
 
     // Use this for initialization
     void Start()
     {
         pathfinder = new BattlePathfinder(); //注册寻路
+        tokenQueue = new List<Token>();
     }
 
     // Update is called once per frame
@@ -216,6 +230,13 @@ public class BattleController : MonoBehaviour
 
         } else if (state == BattlePhrase.WaitToken)
         {
+            if(tokenQueue.Count == 0)
+            {
+                state = BattlePhrase.Idle;
+                return;
+            }
+
+
             //display targettable area by mousepos
             var hit = GetFocusedOnTile();
             if (hit.HasValue && !EventSystem.current.IsPointerOverGameObject())
@@ -279,7 +300,6 @@ public class BattleController : MonoBehaviour
                     // backward 1 step
 
                     // target list is empty, back to normal state & unlock pool
-                    state = BattlePhrase.Idle;
                 }
 
             }
@@ -497,11 +517,7 @@ public class BattleController : MonoBehaviour
         //check focus character
         if (focusedCharacter == null) Debug.LogError("找不到目标角色");
 
-        // get its token data
-        List<ActionToken> actionTokens = new List<ActionToken>();
-        List<SupportToken> supportTokens = new List<SupportToken>();
-        List<SpecialToken> specialTokens = new List<SpecialToken>();
-
+        GameObject.Find("TokenPoolUI").GetComponent<TokenPoolUI>().LoadData(focusedCharacter);
         // update UI
 
     }
@@ -567,6 +583,47 @@ public class BattleController : MonoBehaviour
     }
     #endregion
 
+    public IEnumerator MoveToTile(BattleCharacter currentchar, BattleTile targetTile)
+    {
+        //Move test
+        path = pathfinder.FindPath(focusedCharacter.activeTile, targetTile);
+        isMoving = true;
+        // 被阻碍
+        if (path.Count == 0)
+        {
+            state = BattlePhrase.Idle;
+            yield break;
+        }
+        var step = moveSpeed * Time.deltaTime;
+        float yIndex = path[0].transform.position.y;
+
+        if (path.Count > 0) state = BattlePhrase.WaitAction;
+
+        while (path.Count > 0)
+        {
+            yield return new WaitForEndOfFrame();
+            currentchar.transform.position = Vector3.MoveTowards(currentchar.transform.position, path[0].transform.position, step);
+            currentchar.transform.position = new Vector3(currentchar.transform.position.x, yIndex, currentchar.transform.position.z);
+            if (Vector3.Distance(currentchar.transform.position, path[0].transform.position) < 0.001f)
+            {
+
+                PositionCharacterOnTile(currentchar, path[0]);
+                path.RemoveAt(0);
+                GetInRangeTiles(currentchar.steps);
+            }
+
+        }
+
+        if (currentchar.steps != 0)
+        {
+            state = BattlePhrase.WaitMove;
+        }
+        else
+        {
+            state = BattlePhrase.Idle;
+        }
+
+    }
 
     #region token
     /// <summary>

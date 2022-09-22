@@ -55,71 +55,24 @@ public class BattleCharacter:MonoBehaviour
         return characterData.spd;
     }
 
-
-    /// <summary>
-    /// 攻击判定
-    /// </summary>
-    /// <param name="activeToken"></param>
-    /// <param name="supportTokens"></param>
-    /// <param name="direction"></param>
-    /// <param name="caster"></param>
-    /// <param name="targetTile"></param>
-    public void tokenProcess(Token actionToken, List<Token> supportTokens, int direction,BattleCharacter caster, BattleTile targetTile)
+    public List<ActionToken> GetActionTokens()
     {
+        return characterData.tokenSystem.actionTokens;
+    }
 
-        #region debuglog
-        string testout = "";
-        foreach(var i in supportTokens)
-        {
-            testout += i.tokenName + " ";
-        }
-        Debug.Log($"action:[{actionToken.tokenName}] support:[{testout}] ");
-        #endregion
+    public List<SupportToken> GetSupportTokens()
+    {
+        return characterData.tokenSystem.supportTokens;
+    }
 
-        // check if exist combo in support Tokens -- > trogger combo effect
-        Dictionary<int, int> comboEffect = characterData.tokenSystem.CheckCombo(supportTokens);
-        if ( comboEffect.Count != 0 )
-        {
-            Debug.Log("存在combo:" + comboEffect);
-        } 
-        // arrange the number of real targets based on activetoken effect area and target tile
-        // if has move token
-        foreach ( var token in supportTokens)
-        {
-            if (token.tokenTags.Contains("move"))
-            {
-
-            }
-        }
-        // perform move action
-
-        // check target has onclose token or talent
-
-        // start perform attack
-        // check target evade
-
-        // check target block
-
-        // check crit
-
-        // check hit
-
+    public List<SpecialToken> GetSpecialTokens()
+    {
+        return characterData.tokenSystem.specialTokens;
     }
 
 
-    /// <summary>
-    /// buff系统
-    /// </summary>
-    /// <param name="effects"></param>
-    /// <param name="skillName"></param>
-    /// <param name="targetTile"></param>
-    public void AddBuff(Dictionary<string, int> effects, string skillName, BattleTile targetTile)
-    {
-        if ( targetTile.standon != null)
-        {
-            targetTile.standon.buffSystem.addBuff(effects, skillName );
-        }
-    }
+    
+
 
 
 

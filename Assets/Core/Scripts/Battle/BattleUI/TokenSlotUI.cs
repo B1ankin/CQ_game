@@ -12,6 +12,8 @@ public class TokenSlotUI : MonoBehaviour, IDropHandler
             eventData.pointerDrag.transform.SetParent(transform);
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector3(10, -10, 0);
                 //GetComponent<RectTransform>().anchoredPosition;
+
+            
         }
     }
 

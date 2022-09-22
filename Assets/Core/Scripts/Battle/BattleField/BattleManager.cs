@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+/// <summary>
+/// 场地管理器
+/// </summary>
 public class BattleManager: MonoBehaviour
 {
     private static BattleManager _instance;

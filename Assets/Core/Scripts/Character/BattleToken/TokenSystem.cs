@@ -10,15 +10,15 @@ public class TokenSystem
 {
     private int tokenSlots;
 
-    private List<Token> actionTokens;
-    private List<Token> supportTokens;
-    private List<Token> specialTokens;
+    public List<ActionToken> actionTokens;
+    public  List<SupportToken> supportTokens;
+    public List<SpecialToken> specialTokens;
 
     public TokenSystem()
     {
-        actionTokens = new List<Token>();
-        supportTokens = new List<Token>();
-        specialTokens = new List<Token>();
+        actionTokens = new List<ActionToken>();
+        supportTokens = new List<SupportToken>();
+        specialTokens = new List<SpecialToken>();
     }
 
 
@@ -47,19 +47,19 @@ public class TokenSystem
                 {
                     var b = (ActionToken) a;
                     actionTokens.Add(b);
-                    //Debug.Log(b.tokenName);
+                    Debug.Log(b.tokenName);
                 }
                 else if ( a.GetType() == typeof(SupportToken))
                 {
                     var c = (SupportToken) a;
                     supportTokens.Add(c);
-                    //Debug.Log(c.tokenName);
+                    Debug.Log(c.tokenName);
                 }
                 else if ( a.GetType() == typeof(SpecialToken))
                 {
                     var d = (SpecialToken)a;
                     specialTokens.Add(d);
-                    //Debug.Log(d.tokenName);
+                    Debug.Log(d.tokenName);
                 }
                 //carriedTalents.Add(a);
                 //Debug.Log("导入代币:" + a.talentName);
