@@ -47,6 +47,7 @@ public class BattleController : MonoBehaviour
     //Token 
     private List<Token> tokenQueue;
     private int tokenTargetDirection = 0;
+    private BattleEffects beffects;
 
     private void Awake()
     {
@@ -58,6 +59,7 @@ public class BattleController : MonoBehaviour
         {
             _instance = this;
         }
+        beffects = new BattleEffects();
     }
 
     // Use this for initialization
@@ -277,18 +279,37 @@ public class BattleController : MonoBehaviour
                     if (focusedCharacter != null && targetTile != null)
                     {
                         if (targetTile.standon != null)
+                        {
+                            // 攻击指示
                             StartCoroutine(DisplayAttackText($"{focusedCharacter.characterData.CharacterName}攻击了{targetTile.standon.characterData.CharacterName}"));
+                            Token t_action = new Token() ;
+                            List<Token> t_support_list  = new List<Token>();
+                            foreach (  var a in tokenQueue)
+                            {
+                                if(a.GetType()== typeof(ActionToken)) t_action = a;
+                                else if (a.GetType()== typeof(SupportToken))
+                                {
+                                    t_support_list.Add(a);
+                                }
+                            }
+
+                            beffects.tokenProcess(t_action, t_support_list, focusedCharacter, targetTile);
+                        }
+
+
 
                         //Update token highlighter
 
                         //record target pos
 
+
                         // depends on the the token pool's status, wait numbers of targeting select
 
-
                     }
-                } else
+                } else if ( Input.GetMouseButtonDown(1))
                 {
+
+                    CheckResult();
                     // clear token target list
 
                     // backward 1 step
@@ -647,6 +668,7 @@ public class BattleController : MonoBehaviour
     }
 
     
+
 
     #endregion
 

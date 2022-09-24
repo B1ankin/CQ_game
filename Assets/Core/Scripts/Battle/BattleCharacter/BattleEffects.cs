@@ -12,7 +12,7 @@ public class BattleEffects
     /// <param name="direction"></param>
     /// <param name="caster"></param>
     /// <param name="targetTile"></param>
-    public void tokenProcess(Token actionToken, List<Token> supportTokens, int direction, BattleCharacter caster, BattleTile targetTile)
+    public void tokenProcess(Token actionToken, List<Token> supportTokens, BattleCharacter caster, BattleTile targetTile)
     {
 
         #region debuglog
@@ -39,6 +39,7 @@ public class BattleEffects
             var j = (SupportToken)i;
             foreach (var k in j.tokenEffects)
             {
+                
                 if (tokenEffects.ContainsKey(k.x))
                 {
                     tokenEffects[k.x] += k.y;
@@ -56,14 +57,22 @@ public class BattleEffects
         }
 
 
-        // 执行效果 & 显示效果
+        // 执行效果 
 
         //对应效果配置表
         foreach (var i in tokenEffects.Keys)
         {
-
+            // 调取下方函数
         }
 
+
+
+        // 执行伤害
+
+
+
+        // 显示效果
+        DamageTarget(caster, targetTile.standon, tokenEffects);
     }
 
 
@@ -87,6 +96,60 @@ public class BattleEffects
 
     #region effects
 
+
+    #region DamageSupport
+
+    private void DamageTarget(BattleCharacter caster, BattleCharacter target, Dictionary<int, int> tokenEffects)
+    {
+        // 
+        if (caster.characterData.acc - target.GetEvade() >= Random.Range(0, 100) || tokenEffects.ContainsKey(1))
+        {
+            if (target.GetTaunt() >= Random.Range(0, 100))
+            {
+                int dmg = caster.GetDamage();
+                if(target.characterData.critChance >= Random.Range(0, 100))
+                {
+                    dmg = dmg * target.characterData.critMulti / 100;
+                }
+                // onHit Check
+                if (tokenEffects.ContainsKey(4))
+                {
+                    // 击中回蓝回血。。
+                }
+                // hurt check
+                if (tokenEffects.ContainsKey(5))
+                {
+                    // caster effects
+                }
+
+            }
+            else
+            {
+                Debug.Log($"{target.name} 成功格挡");
+                // check taunt (caster, target)
+                if (tokenEffects.ContainsKey(2))
+                {
+
+                }
+            }
+
+        }
+        else
+        {
+            Debug.Log($"{target.name} 成功闪避");
+            // check evade
+            /*if (tokenEffects.ContainsKey(1))
+            {
+                ResultDamageSupport(tokenEffects);
+            }*/
+        }
+
+    }
+
+
+
+
+    #endregion
 
     #endregion
 }

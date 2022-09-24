@@ -71,7 +71,36 @@ public class BattleCharacter:MonoBehaviour
     }
 
 
-    
+    #region get base stat
+    public int GetDamage()
+    {
+        int dmg = 0;
+        if (characterData.equipmentSystem.GetAllequipmentEntries().ContainsKey(34)){ // 存在伤害值
+            dmg += characterData.equipmentSystem.GetAllequipmentEntries()[34];
+        }
+
+        dmg += (characterData.str + characterData.dex) / 2; 
+
+        if (dmg < 0) return 0;
+        return dmg;
+    }
+
+    public int GetEvade()
+    {
+        //TODO + buff, + talent
+
+        return characterData.dex * 5;
+    }
+
+    public int GetTaunt()
+    {
+        //TODO + buff, + talent
+        return characterData.str * 5;
+    }
+
+    #endregion 
+
+
 
 
 
