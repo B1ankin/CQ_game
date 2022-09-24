@@ -91,12 +91,6 @@ public class BattleController : MonoBehaviour
             CheckResult();
         }
 
-        if (Input.GetKeyUp(KeyCode.B))
-        {
-            ClearTokenQueue();
-        }
-
-        
 
 
         if (isTest) // character generator 
@@ -581,8 +575,13 @@ public class BattleController : MonoBehaviour
             state = BattlePhrase.Idle;
         }
     }
-    #endregion
 
+    /// <summary>
+    /// 坐标到坐标移动辅助
+    /// </summary>
+    /// <param name="currentchar"></param>
+    /// <param name="targetTile"></param>
+    /// <returns></returns>
     public IEnumerator MoveToTile(BattleCharacter currentchar, BattleTile targetTile)
     {
         //Move test
@@ -624,6 +623,9 @@ public class BattleController : MonoBehaviour
         }
 
     }
+    #endregion
+
+
 
     #region token
     /// <summary>
@@ -634,52 +636,17 @@ public class BattleController : MonoBehaviour
         Debug.Log("Wait token target");
 
         //check how many target need to choose
+        var tempqueue = GameObject.Find("TokenQueueUI").GetComponent<TokenQueueUI>().GetTokenQueue();
+        foreach (var a in tempqueue)
+        {
+            Debug.Log(a.tokenName);
+        }
+        tokenQueue = tempqueue;
 
         state = BattlePhrase.WaitToken;
     }
 
-
-
-    /// <summary>
-    /// 清空代币列表
-    /// </summary>
-    public void ClearTokenQueue()
-    {
-        foreach (Transform child in GameObject.Find("TokenSpace").transform)
-        {
-            try
-            {
-                var token = child.GetChild(0);
-                Destroy(token);
-
-            }
-            catch (Exception)
-            {
-                continue;
-            }
-
-        }
-    }
-
-    /// <summary>
-    /// 代币管理：添加
-    /// </summary>
-    /// <param name="token"></param>
-    private void addTokenToQueue(Token token)
-    {
-
-    }
-
-    /// <summary>
-    /// 代币管理：移除
-    /// </summary>
-    /// <param name="token"></param>
-    private void removeTokenFromQueue(Token token)
-    {
-
-    }
-
-
+    
 
     #endregion
 

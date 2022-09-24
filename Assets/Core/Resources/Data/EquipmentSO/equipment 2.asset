@@ -9,20 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: testEquip1
+  m_Script: {fileID: 11500000, guid: a635cba0ab3d1994d8b3c6406851f82e, type: 3}
+  m_Name: equipment 2
   m_EditorClassIdentifier: Assembly-CSharp::Equipment
-  id: 1
-  itemName: "\u77ED\u5251"
-  sprite: {fileID: 21300000, guid: 2412d1d8498463f49ae6ebe3a66ffae9, type: 3}
-  ItemType: 2
+  id: 2
+  itemName: 
+  sprite: {fileID: 0}
+  ItemType: 0
   worth: 0
-  equipmentTag:
-  - weapon
-  - ss
-  - one-hand
-  equipmentEntries:
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
+  equipmentTag: []
+  equipmentEntries: []

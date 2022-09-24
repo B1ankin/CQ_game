@@ -20,6 +20,10 @@ public class TokenUI : MonoBehaviour, IPointerDownHandler, IPointerClickHandler,
     private RectTransform rectTransform;
     private Vector3 oldPos;
 
+    // 用于判断token在queue位置
+    public int slotIndex = -1;
+
+
     public void UpdateToken(Token token )
     {
         if (token.GetType() == typeof(ActionToken))
@@ -75,8 +79,13 @@ public class TokenUI : MonoBehaviour, IPointerDownHandler, IPointerClickHandler,
     public void OnPointerClick(PointerEventData eventData)
     {
         // in pool, move to queue
-        Debug.Log("clicked");
-        // in queue move to pool
+
+        // in queue 
+        if (eventData.pointerDrag.transform.IsChildOf(GameObject.Find("TokenQueueUI").transform))
+        {
+            Debug.Log("from queue");
+        }
+
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -100,6 +109,7 @@ public class TokenUI : MonoBehaviour, IPointerDownHandler, IPointerClickHandler,
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
         oldPos = rectTransform.anchoredPosition;
+
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -113,6 +123,11 @@ public class TokenUI : MonoBehaviour, IPointerDownHandler, IPointerClickHandler,
         Debug.Log("On End Drag");
     }
 
+    public Token GetToken()
+    {
+        return token;
+    }
+
     /// <summary>
     /// loop handling ondrag events (/frame)
     /// </summary>
@@ -121,6 +136,7 @@ public class TokenUI : MonoBehaviour, IPointerDownHandler, IPointerClickHandler,
     {
         rectTransform.anchoredPosition += eventData.delta/ canvas.scaleFactor;
     }
+
 
 
 }

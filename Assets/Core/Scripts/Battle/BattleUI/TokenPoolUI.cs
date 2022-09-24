@@ -22,22 +22,56 @@ public class TokenPoolUI : MonoBehaviour, IDropHandler
         if (eventData.pointerDrag != null)
         {
             //check type
+            var temptype = eventData.pointerDrag.GetComponent<TokenUI>().GetToken().GetType();
+            Debug.Log(temptype);
 
-            //check pos
-            Transform actionT = transform.GetChild(0);
-
-            for(int i = actionT.childCount - 1; i >= 0 ; i--)
+            if (eventData.pointerDrag.transform.IsChildOf(GameObject.Find("TokenQueueUI").transform))
             {
-                if (actionT.GetChild(i).childCount != 0) continue;
-
-                eventData.pointerDrag.transform.SetParent(actionT.GetChild(i));
-                eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector3(10, -10, 0);
+                GameObject.Find("TokenQueueUI").GetComponent<TokenQueueUI>().
+                    RemoveTokenFromQueue(eventData.pointerDrag.GetComponent<TokenUI>().slotIndex);
             }
 
 
-            //GetComponent<RectTransform>().anchoredPosition;
 
-            // call tokenQueue update
+
+
+            if (temptype == typeof(ActionToken))
+            {
+                Transform actionT = transform.GetChild(0);
+
+                for (int i = actionT.childCount - 1; i >= 0; i--)
+                {
+                    if (actionT.GetChild(i).childCount != 0) continue;
+
+                    eventData.pointerDrag.transform.SetParent(actionT.GetChild(i));
+                    eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector3(10, -10, 0);
+                }
+            } else if (temptype == typeof(SupportToken))
+            {
+                Transform supportT = transform.GetChild(1);
+
+                for (int i = supportT.childCount - 1; i >= 0; i--)
+                {
+                    if (supportT.GetChild(i).childCount != 0) continue;
+
+                    eventData.pointerDrag.transform.SetParent(supportT.GetChild(i));
+                    eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector3(10, -10, 0);
+                }
+            } else if (temptype == typeof(SpecialToken))
+            {
+                Transform actionT = transform.GetChild(2);
+
+                for (int i = actionT.childCount - 1; i >= 0; i--)
+                {
+                    if (actionT.GetChild(i).childCount != 0) continue;
+
+                    eventData.pointerDrag.transform.SetParent(actionT.GetChild(i));
+                    eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector3(10, -10, 0);
+                }
+            }
+
+
+            
         }
     }
 
