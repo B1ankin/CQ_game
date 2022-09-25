@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: token 6
   m_EditorClassIdentifier: 
   tokenId: 6
-  tokenName: Charge
+  tokenName: "\u540E\u9000"
   tokenTags:
   - move
   - sp
@@ -22,5 +22,5 @@ MonoBehaviour:
   TokenCost: 1
   sanCost: 5
   tokenEffects:
-  - {x: 0, y: 2}
-  - {x: 0, y: 2}
+  - {x: 18, y: 1}
+  - {x: 13, y: 20}

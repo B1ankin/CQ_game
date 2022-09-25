@@ -20,6 +20,7 @@ public class BattleController : MonoBehaviour
 
     // test field
     public BattlePathfinder pathfinder;
+    private bool battleStartSign;
 
     //pathfinding/range display support
     public float moveSpeed;
@@ -48,6 +49,11 @@ public class BattleController : MonoBehaviour
     private List<Token> tokenQueue;
     private int tokenTargetDirection = 0;
     private BattleEffects beffects;
+    private EntryTable etable;
+
+    // UI support 
+    public GameObject battleWaitQueuelele;
+
 
     private void Awake()
     {
@@ -60,6 +66,10 @@ public class BattleController : MonoBehaviour
             _instance = this;
         }
         beffects = new BattleEffects();
+        etable = new EntryTable();
+        battleStartSign = false;
+
+
     }
 
     // Use this for initialization
@@ -76,26 +86,34 @@ public class BattleController : MonoBehaviour
         PhraseStateMachine();
 
         FieldDisplay();
-        if (Input.GetKeyDown(KeyCode.K)) // test 
+
+        if ( Input.GetKeyUp(KeyCode.Space))
         {
-            if(CharacterList.Count == 0)
+            if (!battleStartSign)
             {
-                // add 2 player and 2 AI 
-                
+                if(CharacterList.Count == 0)
+                {
+                    StartCoroutine(DisplayAttackText("没添加人物"));
+                    return;
+                }
+                BattleStart();
+
+            } else
+            {
+                CheckResult(); // 手动确认下一个
             }
-
-
-            BattleStart();
         }
-
-        if (Input.GetKeyUp(KeyCode.Space))
+        
+        else if (Input.GetKeyUp(KeyCode.RightShift))
         {
             CheckResult();
         }
+        
+        
 
 
 
-        if (isTest) // character generator 
+        if (isTest && !battleStartSign) // character generator 
         {
             if (Input.GetKeyDown(KeyCode.T))
             {
@@ -103,11 +121,15 @@ public class BattleController : MonoBehaviour
                 if (hit.HasValue && !EventSystem.current.IsPointerOverGameObject())
                 {
                     BattleTile battleTile = hit.Value.collider.gameObject.GetComponent<BattleTile>();
-                    var testc = Instantiate(BattleCharacterModel, GameObject.Find("PlayerTeam").transform).GetComponent<BattleCharacter>();
-                    testc.characterData.CharacterName = "player" + UnityEngine.Random.Range(0,10);
-                    testc.activeTile = battleTile;
-                    PositionCharacterOnTile(testc, battleTile);
-                    CharacterList.Add(testc);
+                    if (battleTile.standon == null)
+                    {
+                        var testc = Instantiate(BattleCharacterModel, GameObject.Find("PlayerTeam").transform).GetComponent<BattleCharacter>();
+                        testc.characterData.CharacterName = "player" + UnityEngine.Random.Range(0, 10);
+                        testc.activeTile = battleTile;
+                        PositionCharacterOnTile(testc, battleTile);
+                        CharacterList.Add(testc);
+                    }
+                    
                     
                 }
             }
@@ -118,12 +140,16 @@ public class BattleController : MonoBehaviour
                 if (hit.HasValue && !EventSystem.current.IsPointerOverGameObject())
                 {
                     BattleTile battleTile = hit.Value.collider.gameObject.GetComponent<BattleTile>();
-                    var testc = Instantiate(BattleCharacterModel, GameObject.Find("AITeam").transform).GetComponent<BattleCharacter>();
-                    testc.Team = 0;
-                    testc.characterData.CharacterName = "AI" + UnityEngine.Random.Range(0, 10);
-                    testc.activeTile = battleTile;
-                    PositionCharacterOnTile(testc, battleTile);
-                    CharacterList.Add(testc);
+                    if (battleTile.standon == null) // 确认没占位
+                    {
+                        var testc = Instantiate(BattleCharacterModel, GameObject.Find("AITeam").transform).GetComponent<BattleCharacter>();
+                        testc.Team = 0;
+                        testc.characterData.CharacterName = "AI" + UnityEngine.Random.Range(0, 10);
+                        testc.activeTile = battleTile;
+                        PositionCharacterOnTile(testc, battleTile);
+                        CharacterList.Add(testc);
+                    }
+                    
                 }
             }
         } else
@@ -134,7 +160,6 @@ public class BattleController : MonoBehaviour
 
 
     }
-
 
     private void LoadBattleData()
     {
@@ -185,6 +210,17 @@ public class BattleController : MonoBehaviour
             Debug.Log("Idle state");
         } else if (state == BattlePhrase.WaitMove) // wait player select move target position
         {
+            if (focusedCharacter.steps <= 0)
+            {
+                if( focusedCharacter.tokenSlots <= 0)
+                {
+                    state = BattlePhrase.Idle;
+                    CheckResult(); // 移动自动确认下一个
+                    return;
+                }
+                state = BattlePhrase.WaitToken;
+                return;
+            }
             if (Input.GetMouseButtonDown(0))
             {
                 var hit = GetFocusedOnTile();
@@ -226,14 +262,22 @@ public class BattleController : MonoBehaviour
 
         } else if (state == BattlePhrase.WaitToken)
         {
-            if(tokenQueue.Count == 0)
+            if(focusedCharacter.tokenSlots <= 0)
             {
+                if (focusedCharacter.steps > 0)
+                {
+                    state = BattlePhrase.WaitMove;
+                    return;
+                }
+
+
                 state = BattlePhrase.Idle;
+                CheckResult(); // token 自动确认一下一个
                 return;
             }
 
 
-            //display targettable area by mousepos
+            // 显示目标范围 -- shape
             var hit = GetFocusedOnTile();
             if (hit.HasValue && !EventSystem.current.IsPointerOverGameObject())
             {
@@ -242,6 +286,8 @@ public class BattleController : MonoBehaviour
                 var charPos = focusedCharacter.activeTile.gridPos;
                 var norm = (mousePos - charPos);
                 var newTokenTargetDirection = -1;
+
+                // 判断鼠标朝向
                 if (norm.x > 0)
                 {
                     newTokenTargetDirection = 0;
@@ -250,6 +296,15 @@ public class BattleController : MonoBehaviour
                 {
                     newTokenTargetDirection = 1;
                 }
+                if (norm.y > Mathf.Abs(norm.x))
+                {
+                    newTokenTargetDirection = 2;
+                }
+                else if (norm.y * -1 > Mathf.Abs(norm.x))
+                {
+                    newTokenTargetDirection = 3;
+                }
+
 
                 if (tokenTargetDirection != newTokenTargetDirection)
                 {
@@ -259,10 +314,21 @@ public class BattleController : MonoBehaviour
                     {
                         tiles.Add(focusedCharacter.activeTile.gridPos + new Vector3Int(1, 0, 0));
                     }
-                    else
+                    else if(tokenTargetDirection == 1)
                     {
                         tiles.Add(focusedCharacter.activeTile.gridPos + new Vector3Int(-1, 0, 0));
+                    } else if (tokenTargetDirection == 2)
+                    {
+                        tiles.Add(focusedCharacter.activeTile.gridPos + new Vector3Int(0,0,1));
+                    } else if (tokenTargetDirection == 3)
+                    {
+                        tiles.Add(focusedCharacter.activeTile.gridPos + new Vector3Int(0, 0, -1));
+                    } else
+                    {
+                        Debug.Log("光标相对方向判断错误");
                     }
+
+
                     BattleManager.Instance.ClearAllTileHighlighter();
                     foreach (var tile in tiles)
                     {
@@ -281,19 +347,42 @@ public class BattleController : MonoBehaviour
                         if (targetTile.standon != null)
                         {
                             // 攻击指示
-                            StartCoroutine(DisplayAttackText($"{focusedCharacter.characterData.CharacterName}攻击了{targetTile.standon.characterData.CharacterName}"));
-                            Token t_action = new Token() ;
+                            Token t_action = null ;
                             List<Token> t_support_list  = new List<Token>();
                             foreach (  var a in tokenQueue)
                             {
-                                if(a.GetType()== typeof(ActionToken)) t_action = a;
-                                else if (a.GetType()== typeof(SupportToken))
+                                if (a.GetType() == typeof(ActionToken)) t_action = a;
+                                else if (a.GetType() == typeof(SupportToken))  t_support_list.Add(a);
+                                else if (a.GetType() == typeof(SpecialToken)) t_action = a;
+                            }
+                            
+                            // 执行token内容 
+                            if( t_action == null)
+                            {
+                                StartCoroutine(DisplayAttackText("Token池子空的"));
+                            } else
+                            {
+                                StartCoroutine(DisplayAttackText($"{focusedCharacter.characterData.CharacterName}攻击了{targetTile.standon.characterData.CharacterName}，造成{focusedCharacter.GetDamage()}点伤害"));
+                                beffects.tokenProcess(t_action, t_support_list, focusedCharacter, targetTile);
+
+                                // update UI
+
+                                focusedCharacter.tokenSlots -= 1 + t_support_list.Count;
+                                UpdateUI();
+
+                                // reset state
+                                if (focusedCharacter.steps > 0)
                                 {
-                                    t_support_list.Add(a);
+                                    state = BattlePhrase.WaitMove;
+                                }
+                                else if (focusedCharacter.tokenSlots <= 0)
+                                {
+                                    CheckResult();
                                 }
                             }
 
-                            beffects.tokenProcess(t_action, t_support_list, focusedCharacter, targetTile);
+
+
                         }
 
 
@@ -334,6 +423,15 @@ public class BattleController : MonoBehaviour
     }
 
 
+    public List<Vector3Int> AddShapeMatrix(Vector3Int refVector, int shapeIndex)
+    {
+        var ret = new List<Vector3Int>();
+        var temp = etable.GetShapeMatrix(shapeIndex);
+
+
+
+        return ret;
+    }
     
 
     /// <summary>
@@ -415,6 +513,30 @@ public class BattleController : MonoBehaviour
 
 
 
+    void BattleReset()
+    {
+        for(int i = 0; i <  GameObject.Find("PlayerTeam").transform.childCount; i++)
+        {
+            Destroy(GameObject.Find("PlayerTeam").transform.GetChild(i).gameObject);
+        }
+        for (int i = 0; i < GameObject.Find("AITeam").transform.childCount; i++)
+        {
+            Destroy(GameObject.Find("AITeam").transform.GetChild(i).gameObject);
+        }
+        
+        for (int i = 0; i < GameObject.Find("BattleWaitQueue").transform.childCount; i++)
+        {
+            Destroy(GameObject.Find("BattleWaitQueue").transform.GetChild(i).gameObject);
+        }
+        focusedCharacter = null;
+        CharacterList = new List<BattleCharacter>();
+        state = BattlePhrase.Idle;
+        BattleManager.Instance.ClearAllTileStandOn();
+        BattleManager.Instance.ClearAllTileHighlighter();
+        battleStartSign = false;
+    }
+
+
 
 
     /// <summary>
@@ -424,8 +546,34 @@ public class BattleController : MonoBehaviour
     {
         Debug.Log("战斗开始");
         // load characters
-
+        battleStartSign = true;
         SortCharacterListBySpd(true);
+
+        // 生成wait queue ui内容
+        Transform waitQueuet = GameObject.Find("BattleWaitQueue").transform;
+        foreach (var character1 in CharacterList)
+        {
+            var a = Instantiate(battleWaitQueuelele);
+            a.name = "WaitEle " + character1.characterData.CharacterName;
+            a.transform.SetParent(waitQueuet);
+            a.transform.localScale = Vector3.one;
+            a.transform.Find("waitQueueEleName").GetComponent<Text>().text = character1.characterData.CharacterName;
+
+
+            if (character1.Team == 1)
+            {
+                a.GetComponent<Image>().color = new Color(0, 0, 1, .4f);
+            }
+            else
+            {
+                a.GetComponent<Image>().color = new Color(1, 0, 0, .4f);
+            }
+
+
+        }
+
+
+
         focusedCharacter = CharacterList[0];
 
         // check character isAI
@@ -460,6 +608,8 @@ public class BattleController : MonoBehaviour
                 CharacterList.RemoveAt(0);
             }
         }
+
+        
     }
 
     /// <summary>
@@ -469,9 +619,19 @@ public class BattleController : MonoBehaviour
     private IEnumerator FocusNextCharacter()
     {
         // 排序
+        Transform waitQueuet = GameObject.Find("BattleWaitQueue").transform;
+
+
         CharacterList.Add(CharacterList[0]);
         CharacterList.RemoveAt(0);
+        waitQueuet.GetChild(0).SetAsLastSibling();
+        if (CharacterList[0].IsDead())
+        {
+            CharacterList.RemoveAt(0);
+            Destroy(waitQueuet.GetChild(0).gameObject);
+        }
         focusedCharacter = CharacterList[0];
+
 
         // Character refresh token & turn start action
         yield return new WaitForSeconds(1);
@@ -481,6 +641,7 @@ public class BattleController : MonoBehaviour
         }
         else
         {
+            ResetUI(); // 清除TOken池子剩余内容
             StartCoroutine(AITurn());
         }
     }
@@ -490,14 +651,40 @@ public class BattleController : MonoBehaviour
     /// </summary>
     private void CheckResult()
     {
+        bool aiDead = true;
+        bool playerDead = true;
+
+        Transform playerTeamT = GameObject.Find("PlayerTeam").transform;
+        Transform AITeamT = GameObject.Find("AITeam").transform;
+
         // if one team all dead or mc died
-        bool oneteamDied = false;
-        if(oneteamDied)
+        for (int i = 0; i < playerTeamT.childCount; i++)
         {
-            Debug.Log("开始总结");
-        } else
+            if (!playerTeamT.GetChild(i).GetComponent<BattleCharacter>().IsDead())
+            {
+                playerDead = false;
+                break;
+            }
+        }
+
+        for (int i = 0; i < AITeamT.childCount; i++)
         {
-            StartCoroutine( FocusNextCharacter());
+            if (!AITeamT.GetChild(i).GetComponent<BattleCharacter>().IsDead())
+            {
+                aiDead = false;
+                break;
+            }
+        }
+
+        if (aiDead)
+        {
+            Debug.Log("玩家获胜");
+        } else if (playerDead) {
+            Debug.Log("敌方获胜");
+        }
+        else
+        {
+            StartCoroutine(FocusNextCharacter());
         }
 
     }
@@ -507,8 +694,28 @@ public class BattleController : MonoBehaviour
     /// </summary>
     private void UpdateUI()
     {
-        // load current character's data into UI
+        //reset pool based on current character
+        UpdateTokenPool();
 
+
+        // reset queue();
+        var tokenQueueUI = GameObject.Find("TokenQueueUI").GetComponent<TokenQueueUI>();
+        tokenQueueUI.ResetTokenQueue();
+        tokenQueueUI.UpdateTokenQueue(focusedCharacter.tokenSlots);
+
+        // character panel
+        // 现在用一个头像
+        GameObject.Find("CharacterNameUI").GetComponent<Text>().text = focusedCharacter.characterData.CharacterName;
+        GameObject.Find("HPBarUI").transform.localScale = new Vector3(focusedCharacter.GetHealthPercent(), 1,1);
+        GameObject.Find("SPBarUI").transform.localScale = new Vector3(focusedCharacter.GetSanityPercent(), 1, 1);
+
+
+    }
+
+    private void ResetUI()
+    {
+        var tokenQueueUI = GameObject.Find("TokenQueueUI").GetComponent<TokenQueueUI>();
+        tokenQueueUI.ResetTokenQueue();
     }
 
 
@@ -518,8 +725,12 @@ public class BattleController : MonoBehaviour
     private void PlayerTurn()
     {
         UpdateUI(); // update ui and active base Action
-        UpdateTokenPool(); // 
+
+
+        // reset dynamic stats
+        focusedCharacter.restoreSlots();
         focusedCharacter.restoreSteps();
+
         Debug.Log($"player:{focusedCharacter.characterData.CharacterName}的回合");
         state = BattlePhrase.WaitMove; // wait action select
     }
@@ -597,13 +808,18 @@ public class BattleController : MonoBehaviour
         }
     }
 
+
+    public void MoveToTile1(BattleCharacter currentchar, BattleTile targetTile)
+    {
+        StartCoroutine(MoveToTile(currentchar, targetTile));
+    }
     /// <summary>
     /// 坐标到坐标移动辅助
     /// </summary>
     /// <param name="currentchar"></param>
     /// <param name="targetTile"></param>
     /// <returns></returns>
-    public IEnumerator MoveToTile(BattleCharacter currentchar, BattleTile targetTile)
+    private IEnumerator MoveToTile(BattleCharacter currentchar, BattleTile targetTile)
     {
         //Move test
         path = pathfinder.FindPath(focusedCharacter.activeTile, targetTile);
@@ -682,18 +898,47 @@ public class BattleController : MonoBehaviour
     {
         Debug.Log($"AI:{focusedCharacter.characterData.CharacterName}回合");
         //check sight
-
-
+        BattleCharacter target = null;
+        int currentMax = 999;
+        for (int targetIndex = 0; targetIndex < GameObject.Find("PlayerTeam").transform.childCount; targetIndex ++) 
+        {
+            var tempCharacter = GameObject.Find("PlayerTeam").transform.GetChild(targetIndex).GetComponent<BattleCharacter>();
+            if (tempCharacter.IsDead()) continue; // 忽略尸体
+            int tempDis = tempCharacter.GetDistance(focusedCharacter);
+            Debug.Log($"{tempCharacter.characterData.CharacterName} 距离 {tempDis} ");
+            if (tempDis < currentMax)
+            {
+                currentMax = tempDis;
+                target = tempCharacter;
+            }
+        }
+        if (target == null) {
+            Debug.Log("找不到敌方单位");
+        }
         // move 
         focusedCharacter.restoreSteps();
-        path = pathfinder.FindPath(focusedCharacter.activeTile, GameObject.Find("PlayerTeam").transform.GetChild(0).GetComponent<BattleCharacter>().activeTile);
+
+
+        path = pathfinder.FindPath(focusedCharacter.activeTile, target.activeTile);
         Debug.Log(focusedCharacter.activeTile.gridPos);
         Debug.Log(GameObject.Find("PlayerTeam").transform.GetChild(0).GetComponent<BattleCharacter>().activeTile.gridPos);
         isMoving = true;
         yield return StartCoroutine(MoveByPath(focusedCharacter, path));
 
         // item & attack\
-        StartCoroutine(DisplayAttackText($"{focusedCharacter.characterData.CharacterName}攻击了{GameObject.Find("PlayerTeam").transform.GetChild(0).GetComponent<BattleCharacter>().activeTile.standon.characterData.CharacterName}"));
+        if(target.GetDistance(focusedCharacter) < 2) // 横竖范围2确认
+        {
+            // 攻击计算和执行
+            var alive = focusedCharacter.TestDamage(target); // 默认ai的技能
+            
+            // 攻击效果
+            StartCoroutine(DisplayAttackText($"{focusedCharacter.characterData.CharacterName}攻击了{GameObject.Find("PlayerTeam").transform.GetChild(0).GetComponent<BattleCharacter>().activeTile.standon.characterData.CharacterName}"));
+
+        
+        } else
+        {
+            Debug.Log("目标在范围外");
+        }
 
 
         // finish action 

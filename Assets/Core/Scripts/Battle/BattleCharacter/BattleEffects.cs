@@ -2,8 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 技能发生器
+/// </summary>
 public class BattleEffects
 {
+
+    private EntryTable etable;
+
+    public BattleEffects()
+    {
+        etable = new EntryTable();
+    }
+
+
     /// <summary>
     /// 攻击判定
     /// </summary>
@@ -24,6 +36,22 @@ public class BattleEffects
         Debug.Log($"action:[{actionToken.tokenName}] support:[{testout}] ");
         #endregion
 
+        if( actionToken.GetType() == typeof(SpecialToken))
+        {
+            var effects = new Dictionary<string, int>();
+            if (actionToken.tokenId == 3)
+            {
+                Debug.Log("使用闪避");
+                effects["evadeChance"] = caster.characterData.dex * 5;
+                caster.buffSystem.addBuff(effects, "准备闪避");
+            } else if(actionToken.tokenId ==4) {
+                Debug.Log("准备格挡");
+                effects["blockChance"] = caster.characterData.str * 5;
+                caster.buffSystem.addBuff(effects, "准备格挡");
+            }
+        }
+
+
         // 统计效果
         // token combo check
         Dictionary<int, int> comboEffect = caster.characterData.tokenSystem.CheckCombo(supportTokens);
@@ -33,46 +61,51 @@ public class BattleEffects
         }
 
         // token effect sum
-        Dictionary<int, int> tokenEffects = new Dictionary<int, int>();
+        Dictionary<string, int> tokenEffects = new Dictionary<string, int>();
         foreach (var i in supportTokens)
         {
             var j = (SupportToken)i;
             foreach (var k in j.tokenEffects)
             {
-                
-                if (tokenEffects.ContainsKey(k.x))
+                var key = etable.GetStrByIndex(k.x);
+                if (tokenEffects.ContainsKey(key))
                 {
-                    tokenEffects[k.x] += k.y;
+                    tokenEffects[key] += k.y;
                 }
                 else
                 {
-                    tokenEffects[k.x] = k.y;
+                    tokenEffects[key] = k.y;
                 }
 
             }
         }
-        foreach (var i in tokenEffects.Keys)
-        {
-            Debug.Log($"拥有效果{i}：{tokenEffects[i]}");
-        }
 
+        // test log 
 
         // 执行效果 
 
-        //对应效果配置表
-        foreach (var i in tokenEffects.Keys)
+        //对应效果配置表 -- 不应该引用battleController
+        // move
+        if(tokenEffects.ContainsKey("moveRight"))
         {
-            // 调取下方函数
+            BattleController.Instance.MoveToTile1(caster, BattleManager.Instance.GetTileByPos(caster.activeTile.gridPos + new Vector3Int(tokenEffects["moveRight"], 0, 0)));
         }
+
+        if (tokenEffects.ContainsKey("moveLeft"))
+        {
+            BattleController.Instance.MoveToTile1(caster, BattleManager.Instance.GetTileByPos(caster.activeTile.gridPos + new Vector3Int(-1 * tokenEffects["moveLeft"], 0, 0)));
+        }
+
+        
 
 
 
         // 执行伤害
+        DamageTarget(caster, targetTile.standon, tokenEffects);
 
 
 
         // 显示效果
-        DamageTarget(caster, targetTile.standon, tokenEffects);
     }
 
 
@@ -94,43 +127,77 @@ public class BattleEffects
 
 
 
-    #region effects
+    #region TokenEffects -- OnTokenOnly
 
 
     #region DamageSupport
+    /// <summary>
+    /// Test Damage process -- passed
+    /// </summary>
+    /// <param name="caster"></param>
+    /// <param name="target"></param>
+    /// <returns></returns>
+    public bool TestDamage(BattleCharacter caster, BattleCharacter target)
+    {
+        bool ret = target.characterData.healthSystem.HealthUpdate(-1 * caster.GetDamage());
+        Debug.Log($"{target.characterData.CharacterName}受到了{caster.characterData.CharacterName}{caster.GetDamage()}点伤害，还剩下{target.characterData.healthSystem.health}点血");
 
-    private void DamageTarget(BattleCharacter caster, BattleCharacter target, Dictionary<int, int> tokenEffects)
+
+        if (target.characterData.healthSystem.IsDead())
+        {
+            target.gameObject.transform.Rotate(new Vector3(0, 90, 0));
+            Debug.Log(target.characterData.CharacterName + "被击杀");
+        }
+
+        return ret;
+    }
+
+    private void DamageTarget(BattleCharacter caster, BattleCharacter target, Dictionary<string, int> tokenEffects)
     {
         // 
-        if (caster.characterData.acc - target.GetEvade() >= Random.Range(0, 100) || tokenEffects.ContainsKey(1))
+        int acc = caster.characterData.acc;
+        if (tokenEffects.ContainsKey("accuracy")) acc += tokenEffects["accuracy"];
+        if ( target.GetEvade() < Random.Range(0, 100 + acc) || tokenEffects.ContainsKey("ignoreEvade"))
         {
-            if (target.GetTaunt() >= Random.Range(0, 100))
+            if (target.GetTaunt() < Random.Range(1, 100) || tokenEffects.ContainsKey("ignoreTaunt"))
             {
                 int dmg = caster.GetDamage();
-                if(target.characterData.critChance >= Random.Range(0, 100))
+                if (tokenEffects.ContainsKey("damagePercent"))
+                {
+                    dmg *= (100 + tokenEffects["damagePercent"]) / 100;
+                }
+
+
+                if (target.characterData.critChance >= Random.Range(0, 100))
                 {
                     dmg = dmg * target.characterData.critMulti / 100;
                 }
+
                 // onHit Check
-                if (tokenEffects.ContainsKey(4))
+                if (tokenEffects.ContainsKey("extraSanDamage"))
                 {
-                    // 击中回蓝回血。。
-                }
+                    target.characterData.sanitySystem.UpdateSanity(tokenEffects["extraSanDamage"]);
+                        }
+                // damage result
+                bool ret = target.characterData.healthSystem.HealthUpdate(-1 * caster.GetDamage());
+                Debug.Log($"{target.characterData.CharacterName}受到了{caster.characterData.CharacterName}{caster.GetDamage()}点伤害，还剩下{target.characterData.healthSystem.health}点血");
+
+
                 // hurt check
-                if (tokenEffects.ContainsKey(5))
+                
+
+                if (target.characterData.healthSystem.IsDead())
                 {
-                    // caster effects
+                    target.gameObject.transform.Rotate(new Vector3(0, 90, 0));
+                    Debug.Log(target.characterData.CharacterName + "被击杀");
                 }
 
             }
             else
             {
-                Debug.Log($"{target.name} 成功格挡");
+                Debug.Log($"{target.name} {target.GetTaunt()} 成功格挡");
                 // check taunt (caster, target)
-                if (tokenEffects.ContainsKey(2))
-                {
-
-                }
+                
             }
 
         }
@@ -150,6 +217,9 @@ public class BattleEffects
 
 
     #endregion
+
+    
+
 
     #endregion
 }

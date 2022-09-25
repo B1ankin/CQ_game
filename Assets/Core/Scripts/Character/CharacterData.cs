@@ -33,8 +33,9 @@ public class CharacterData
     public int spd;
     public int acc;
     public int moveRange;
+    public int tokenSlotAmount;
 
-
+    private Dictionary<int, int> allAddOnEntries;
 
     public CharacterData(Character character)
     {
@@ -58,20 +59,23 @@ public class CharacterData
         acc = character.acc;
         moveRange = character.moveRange;
 
+        tokenSlotAmount = 4; // - common default value
+
+        allAddOnEntries = new Dictionary<int, int>();
+
         // equipment - TODO
         equipmentSystem = new EquipmentSystem();
-        Dictionary<int,int> equipmentEntries = equipmentSystem.GetAllequipmentEntries();
 
         // talent - checked
         talentSystem = new TalentSystem(character.Talents);
         List<int> talentUnlocks = talentSystem.GetAllUnlocks();
-        Dictionary<int, int> talentEntries = talentSystem.GetAllEntries();
 
         // tokens - TODO
         tokenSystem = new TokenSystem();
         tokenSystem.LoadTokens(talentUnlocks); //天赋来源 -TODO
         tokenSystem.LoadTokens(character.Tokens); //见闻来源 - checked
 
+        
         // stories
         // TODO
 
@@ -80,8 +84,15 @@ public class CharacterData
 
 
     #region support methods
+    public Dictionary<int, int> GetEquipmentEntries()
+    {
+        return equipmentSystem.GetAllequipmentEntries(); // z装备附加值
+    }
 
-
+    public Dictionary<int, int> GetTalentEntries()
+    {
+         return talentSystem.GetAllEntries(); // 天赋附加值
+    }
 
     #endregion
 

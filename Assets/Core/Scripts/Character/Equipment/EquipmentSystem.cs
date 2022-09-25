@@ -57,7 +57,7 @@ public class EquipmentSystem
 
 
 
-        return null;
+        return ret;
     }
 
     public void calcAllEntriesSupport(ref Dictionary<int,int> retDict, Equipment equip)

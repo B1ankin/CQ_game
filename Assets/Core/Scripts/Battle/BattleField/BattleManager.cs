@@ -106,6 +106,15 @@ public class BattleManager: MonoBehaviour
         }
     }
 
+    public void ClearAllTileStandOn()
+    {
+        foreach (var tilePos in gridMap.Keys)
+        {
+            gridMap[tilePos].standon = null;
+            gridMap[tilePos].isBlocked = false;
+        }
+    }
+
 
     public BattleTile GetTileByPos(Vector3Int pos )
     {

@@ -17,11 +17,10 @@ public class TokenQueueUI : MonoBehaviour, IDropHandler
 
     private void Start()
     {
-        InitialTokenQueue(6);
     }
 
     // initial
-    private void InitialTokenQueue(int queue_size)
+    public void UpdateTokenQueue(int queue_size)
     {
         for (int i = 0; i < queue_size; i++)
         {
@@ -38,7 +37,19 @@ public class TokenQueueUI : MonoBehaviour, IDropHandler
         if (eventData.pointerDrag != null)
         {
             //check type
-
+            bool typecheck = false;
+            foreach(var token in tokenQueue)
+            {
+                if (token.GetType() == typeof (ActionToken) || token.GetType() == typeof(SpecialToken))
+                {
+                    typecheck = true;
+                    break;
+                }
+            }
+            if (typecheck)
+            {
+                if (eventData.pointerDrag.GetComponent<TokenUI>().GetToken().GetType() != typeof(SupportToken)) return;
+            }
             //check pos
 
 
@@ -94,10 +105,7 @@ public class TokenQueueUI : MonoBehaviour, IDropHandler
 
         for (int i = 0; i < transform.childCount; i++)
         {
-            if (transform.GetChild(i).childCount != 0)
-            {
-                Destroy(transform.GetChild(i).GetChild(0).gameObject);
-            }
+            Destroy(transform.GetChild(i).gameObject);
         }
     }
 
