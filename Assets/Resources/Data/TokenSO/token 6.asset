@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d65b50d76d52146a7697f2ebaa2d7f, type: 3}
+  m_Name: token 6
+  m_EditorClassIdentifier: 
+  tokenId: 6
+  tokenName: "\u540E\u9000"
+  tokenSprite: {fileID: 21300000, guid: 7106341c46b013e4d82ad1d54cca7f03, type: 3}
+  tokenTags:
+  - move
+  - sp
+  - ss
+  - sw
+  TokenCost: 1
+  sanCost: 5
+  tokenEffects:
+  - {x: 18, y: 1}
+  - {x: 13, y: 20}
