@@ -1,0 +1,1541 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7856525590659152458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7856525590659152774}
+  - component: {fileID: 7856525590659152775}
+  - component: {fileID: 7856525590659152772}
+  - component: {fileID: 7856525590659152773}
+  - component: {fileID: 7856525590659152506}
+  - component: {fileID: 7856525590659152507}
+  - component: {fileID: 7856525590659152504}
+  - component: {fileID: 7856525590659152505}
+  - component: {fileID: 7856525590659152510}
+  - component: {fileID: 7856525590659152511}
+  - component: {fileID: 7856525590659152508}
+  - component: {fileID: 7856525590659152509}
+  - component: {fileID: 7856525590659152498}
+  - component: {fileID: 7856525590659152499}
+  - component: {fileID: 7856525590659152496}
+  - component: {fileID: 7856525590659152497}
+  - component: {fileID: 7856525590659152502}
+  - component: {fileID: 7856525590659152503}
+  - component: {fileID: 7856525590659152500}
+  - component: {fileID: 7856525590659152501}
+  - component: {fileID: 7856525590659152490}
+  - component: {fileID: 7856525590659152491}
+  - component: {fileID: 7856525590659152488}
+  - component: {fileID: 7856525590659152489}
+  - component: {fileID: 7856525590659152494}
+  - component: {fileID: 7856525590659152495}
+  - component: {fileID: 7856525590659152492}
+  - component: {fileID: 7856525590659152493}
+  - component: {fileID: 7856525590659152482}
+  - component: {fileID: 7856525590659152483}
+  - component: {fileID: 7856525590659152480}
+  - component: {fileID: 7856525590659152481}
+  - component: {fileID: 7856525590659152486}
+  - component: {fileID: 7856525590659152487}
+  - component: {fileID: 7856525590659152484}
+  - component: {fileID: 7856525590659152485}
+  - component: {fileID: 7856525590659152474}
+  - component: {fileID: 7856525590659152475}
+  - component: {fileID: 7856525590659152472}
+  - component: {fileID: 7856525590659152473}
+  - component: {fileID: 7856525590659152478}
+  - component: {fileID: 7856525590659152479}
+  - component: {fileID: 7856525590659152476}
+  - component: {fileID: 7856525590659152477}
+  - component: {fileID: 7856525590659152466}
+  - component: {fileID: 7856525590659152467}
+  - component: {fileID: 7856525590659152464}
+  - component: {fileID: 7856525590659152465}
+  - component: {fileID: 7856525590659152470}
+  - component: {fileID: 7856525590659152471}
+  - component: {fileID: 7856525590659152468}
+  - component: {fileID: 7856525590659152469}
+  - component: {fileID: 7856525590659152768}
+  - component: {fileID: 7856525590659152769}
+  m_Layer: 0
+  m_Name: Flowchart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7856525590659152774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7856525590659152775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  scrollPos: {x: 272.49738, y: 173.00482}
+  variablesScrollPos: {x: 0, y: 0}
+  variablesExpanded: 1
+  blockViewHeight: 528
+  zoom: 0.8200002
+  scrollViewRect:
+    serializedVersion: 2
+    x: -343
+    y: -340
+    width: 1114
+    height: 859
+  selectedBlocks:
+  - {fileID: 7856525590659152772}
+  - {fileID: 7856525590659152506}
+  - {fileID: 7856525590659152505}
+  - {fileID: 7856525590659152510}
+  - {fileID: 7856525590659152486}
+  - {fileID: 7856525590659152487}
+  - {fileID: 7856525590659152473}
+  - {fileID: 7856525590659152464}
+  - {fileID: 7856525590659152471}
+  selectedCommands: []
+  variables: []
+  description: 
+  stepPause: 0
+  colorCommands: 1
+  hideComponents: 1
+  saveSelection: 1
+  localizationId: 
+  showLineNumbers: 0
+  hideCommands: []
+  luaEnvironment: {fileID: 0}
+  luaBindingName: flowchart
+--- !u!114 &7856525590659152772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 67
+    y: 70
+    width: 85.365845
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 0
+  blockName: starter
+  description: 
+  eventHandler: {fileID: 7856525590659152475}
+  commandList:
+  - {fileID: 7856525590659152773}
+  - {fileID: 7856525590659152507}
+  - {fileID: 7856525590659152504}
+  - {fileID: 7856525590659152511}
+  - {fileID: 7856525590659152508}
+  suppressAllAutoSelections: 0
+--- !u!114 &7856525590659152773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 1
+  indentLevel: 0
+  storyText: "\uFF08\u8FDC\u5904\u4F20\u6765\u5973\u5B50\u58F0\uFF09\u6551\u547D\u554A
+    \uFF01\uFF01\uFF01"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 247.9361
+    y: 14.212753
+    width: 64.63414
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 2
+  blockName: 1.1
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 7856525590659152509}
+  - {fileID: 7856525590659152768}
+  - {fileID: 7856525590659152769}
+  - {fileID: 7856525590659152497}
+  - {fileID: 7856525590659152472}
+  suppressAllAutoSelections: 0
+--- !u!114 &7856525590659152507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 3
+  indentLevel: 0
+  storyText: "\u516C\u5B50\u5343\u91D1\u4E4B\u8EAF\uFF0C\u4E14\u6CA1\u5E26\u62A4\u536B\uFF0C\u6B64\u4E8B\u9887\u6709\u98CE\u9669\u3002\u4E0D\u5982\u8FD8\u662F\u4E0E\u8392\u56FD\u5175\u4E01\u540C\u884C
+    \u770B\u770B\u6709\u65E0\u5B9D\u85CF\u5427\u3002"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 9ddda594b27ee7f4a89f7a676515d875, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 0
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 4
+  indentLevel: 0
+  text: "\u9690\u5FCD"
+  description: 
+  targetBlock: {fileID: 7856525590659152506}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+--- !u!114 &7856525590659152505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 242.91925
+    y: 91.92646
+    width: 65.85365
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 7
+  blockName: 1.2
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 7856525590659152498}
+  - {fileID: 7856525590659152502}
+  suppressAllAutoSelections: 0
+--- !u!114 &7856525590659152510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 237.30103
+    y: 219.19525
+    width: 129.26828
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 8
+  blockName: "1.3 + \u89E3\u6551\u540E\u7EED"
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 7856525590659152499}
+  - {fileID: 7856525590659152496}
+  - {fileID: 7856525590659152503}
+  - {fileID: 7856525590659152491}
+  - {fileID: 7856525590659152490}
+  - {fileID: 7856525590659152501}
+  - {fileID: 7856525590659152500}
+  - {fileID: 7856525590659152494}
+  - {fileID: 7856525590659152495}
+  - {fileID: 7856525590659152488}
+  - {fileID: 7856525590659152489}
+  - {fileID: 7856525590659152482}
+  - {fileID: 7856525590659152483}
+  - {fileID: 7856525590659152492}
+  - {fileID: 7856525590659152493}
+  - {fileID: 7856525590659152480}
+  - {fileID: 7856525590659152481}
+  - {fileID: 7856525590659152485}
+  suppressAllAutoSelections: 0
+--- !u!114 &7856525590659152511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 5
+  indentLevel: 0
+  text: "\u524D\u5F80\u6551\u63F4"
+  description: 
+  targetBlock: {fileID: 7856525590659152505}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+--- !u!114 &7856525590659152508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 6
+  indentLevel: 0
+  text: "\u56DE\u57CE"
+  description: 
+  targetBlock: {fileID: 7856525590659152510}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+--- !u!114 &7856525590659152509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 9
+  indentLevel: 0
+  storyText: "\u53D4\u7259\u6240\u8A00\u5373\u662F\u3002"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: cc527c3691860f8458ebf6d7cabde378, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 10
+  indentLevel: 0
+  storyText: "\u9C8D\u53D4\u6240\u8A00\u5373\u4F7F\uFF0C\u4F46\u543E\u4E43\u9F50\u56FD\u6B63\u7EDF\u56FD\u541B\uFF0C\u516C\u5B59\u5BB5\u5C0F\u5DF2\u7136\u7A83\u56FD\uFF0C\u6211\u82E5\u8FDE\u8FD9\u9F50\u5175\u6076\u884C\u90FD\u4E0D\u80FD\u5236\u6B62\uFF0C\u5982\u4F55\u6709\u8138\u9762\u518D\u56DE\u4E34\u7F01\u3002\u5B9D\u85CF\u4E4B\u8BF4\u4EC5\u662F\u8C23\u8A00\uFF0C\u66F4\u4F55\u51B5\u5C31\u7B97\u771F\u6709\u5B9D\u85CF\uFF0C\u8392\u56FD\u5175\u4E01\u5C82\u4F1A\u8BA9\u6211\u67D3\u6307\uFF1F\u6551\u4EBA\uFF01\uFF01\uFF01\uFF01"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: cc527c3691860f8458ebf6d7cabde378, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 11
+  indentLevel: 0
+  storyText: "\u54CE\uFF0C\u6211\u7D2F\u4E86\uFF0C\u9C8D\u53D4\u6211\u4EEC\u56DE\u57CE\u5427."
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: cc527c3691860f8458ebf6d7cabde378, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 12
+  indentLevel: 0
+  storyText: "\u5C0F\u767D\u54E5\u54E5\uFF0C\u6211\u5C31\u77E5\u9053\u4F60\u4F1A\u6765\u6551\u6211\u7684\uFF01"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2dcff8e74af04014eb588e88fc54984e, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 13
+  indentLevel: 0
+  storyText: "\u516C\u5B50\uFF0C\u4E0D\u77E5\u9053\u662F\u5426\u5728\u56DE\u6765\u7684\u8DEF\u4E0A\u89C1\u5230\u4E86\u5C0F\u5973\u3002\u5C0F\u5973\u51FA\u57CE\u6765\u627E\u4F60\u4E86\u3002"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 7d8c2ab4d0c82b24fbdaaae727f016b6, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 0
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 14
+  indentLevel: 0
+  storyText: "\u591A\u8C22\u516C\u5B50\uFF0C\u89E3\u6551\u5C0F\u5973\uFF0C\u4E0D\u77E5\u516C\u5B50\u662F\u5426\u4F1A\u4E3A\u4E86\u5C0F\u5973\u7559\u5728\u8392\u56FD\u52A9\u6211\u4E00\u81C2\u4E4B\u529B\u3002"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 7d8c2ab4d0c82b24fbdaaae727f016b6, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 15
+  indentLevel: 0
+  storyText: "\u516C\u4E3B\uFF0C\u6211\u53EA\u662F\u78B0\u5DE7\u8DEF\u8FC7\u3002"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: cc527c3691860f8458ebf6d7cabde378, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 16
+  indentLevel: 0
+  storyText: "\u9F50\u8392\u8FB9\u5883\u51F6\u9669\uFF0C\u4E0D\u77E5\u516C\u4E3B\u4E00\u4EBA\u4E3A\u4F55\u5728\u6B64\u3002"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: cc527c3691860f8458ebf6d7cabde378, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 17
+  indentLevel: 0
+  storyText: "\u6069\uFF0C\u5C0F\u767D\u54E5\u54E5\u5728\uFF0C\u6211\u4E0D\u54ED\uFF01\u6211\u5F00\u5FC3\u5462"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2dcff8e74af04014eb588e88fc54984e, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 18
+  indentLevel: 0
+  storyText: "\uFF08\u64E6\u64E6\u8392\u5DF1\u7684\u773C\u6CEA\uFF09\u5DE7\u7B11\u5029\u516E\uFF0C\u7F8E\u76EE\u76FC\u516E\u3002\u4E0D\u54ED\u4E86\uFF0C\u8FD9\u624D\u662F\u8392\u5DF1\u516C\u4E3B\u8BE5\u6709\u7684\u6837\u5B50
+    \uFF08\u8392\u5DF1\u597D\u611F\u5EA6\u4E0A\u5347\uFF09"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: cc527c3691860f8458ebf6d7cabde378, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 19
+  indentLevel: 0
+  storyText: "\u5C0F\u767D\u54E5\u54E5\u8BF4\u7B11\u4E86\uFF0C\u6551\u547D\u4E4B\u6069\u65E0\u4EE5\u4E3A\u62A5\u3002\u591A\u8C22\u516C\u5B50"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2dcff8e74af04014eb588e88fc54984e, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 20
+  indentLevel: 0
+  storyText: "\u516C\u5B59\u65E0\u77E5\uFF0C\u7BA1\u81F3\u7236\u7B49\u4EBA\u5F11\u541B\u3002\u9F50\u8944\u516C\u5F53\u573A\u6BD9\u547D\uFF0C\u516C\u5B59\u65E0\u77E5\u81EA\u7ACB\u4E3A\u541B\u3002"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2dcff8e74af04014eb588e88fc54984e, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 21
+  indentLevel: 0
+  storyText: "\u5DF1\u513F\uFF0C\u4EE5\u540E\u8FD9\u6837\u7684\u6D88\u606F\uFF0C\u4E0D\u662F\u4EC0\u4E48\u7EDD\u5BC6\u4FE1\u606F\uFF0C\u8BF7\u62A4\u536B\u6765\u544A\u77E5\u6211\u5C31\u884C\u4E86\u3002\u8FD9\u6D88\u606F\uFF0C\u4E0D\u53CA\u4F60\u91CD\u8981\u3002\uFF08\u8392\u5DF1\u597D\u611F\u4E0A\u5347\uFF09"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: cc527c3691860f8458ebf6d7cabde378, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 22
+  indentLevel: 0
+  storyText: "\u9F50\u56FD\u751F\u53D8\uFF0C\u6211\u7279\u5730\u51FA\u57CE\u6765\u627E\u5C0F\u767D\u54E5\u54E5\uFF0C\u60F3\u628A\u8FD9\u4E2A\u6D88\u606F\u7ED9\u4F60\u3002"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2dcff8e74af04014eb588e88fc54984e, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 23
+  indentLevel: 0
+  storyText: "\u751F\u53D8\uFF1F\u53D1\u751F\u4EC0\u4E48\u4E8B\u60C5\u4E86\u3002"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: cc527c3691860f8458ebf6d7cabde378, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 24
+  indentLevel: 0
+  storyText: "\u6CA1\u6709\uFF0C\u53EA\u662F\u6709\u4E2A\u95EE\u9898\uFF0C\u6211\u4E0D\u77E5\u8BE5\u4E0D\u8BE5\u95EE"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2dcff8e74af04014eb588e88fc54984e, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 25
+  indentLevel: 0
+  storyText: "\u4EC0\u4E48\uFF1F\u6211\u4EEC\u4E4B\u95F4\u6709\u4F55\u4E0D\u53EF\u8BF4\u3002"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: cc527c3691860f8458ebf6d7cabde378, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 26
+  indentLevel: 0
+  storyText: "\uFF08\u6C89\u9ED8\uFF0C\u6EE1\u8138\u6CEA\u6C34\uFF09"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2dcff8e74af04014eb588e88fc54984e, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 27
+  indentLevel: 0
+  storyText: "\u5DF1\u513F\uFF0C\u600E\u4E48\u4E0D\u8BF4\u8BDD\u5462\uFF0C\u662F\u751F\u6211\u6C14\u4E86\uFF1F"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: cc527c3691860f8458ebf6d7cabde378, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 30
+  indentLevel: 0
+  storyText: "\u9F50\u56FD\u4E00\u4E71\uFF0C\u5C0F\u767D\u54E5\u54E5\u662F\u4E0D\u662F\u8981\u56DE\u53BB\u4E86\uFF0C\u6211\u662F\u4E0D\u662F\u5728\u4E5F\u89C1\u4E0D\u5230\u54E5\u54E5\u4E86\u3002"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2dcff8e74af04014eb588e88fc54984e, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 0
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 31
+  indentLevel: 0
+  text: "\u662F\uFF0C\u9F50\u56FD\u5728\u7B49\u6211\u56DE\u53BB\u3002"
+  description: 
+  targetBlock: {fileID: 7856525590659152486}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+--- !u!114 &7856525590659152486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 429.50018
+    y: 169.68364
+    width: 117.07316
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 32
+  blockName: New Block1
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 7856525590659152484}
+  suppressAllAutoSelections: 0
+--- !u!114 &7856525590659152487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 425.0982
+    y: 284.4563
+    width: 118.29267
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 33
+  blockName: New Block2
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 7856525590659152474}
+  suppressAllAutoSelections: 0
+--- !u!114 &7856525590659152484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 34
+  indentLevel: 0
+  storyText: "\uFF08\u8392\u5DF1\u597D\u611F\u4E0B\u964D\uFF09"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2dcff8e74af04014eb588e88fc54984e, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 35
+  indentLevel: 0
+  text: "\u6211\u54E5\u54E5\u516C\u5B50\u7EA0\u8FD8\u5728\uFF0C\u56DE\u9F50\u7684\u672A\u6765\u4E5F\u6A21\u7CCA\u4E0D\u6E05\uFF0C\u5728\u8392\u56FD\u5E2E\u52A9\u4F60\u7236\u4EB2\u672A\u5C1D\u4E0D\u662F\u4E00\u79CD\u65B9\u6CD5\uFF0C\u4F55\u51B5\u8FD9\u91CC\u8FD8\u6709\u4F60\u3002"
+  description: 
+  targetBlock: {fileID: 7856525590659152487}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+--- !u!114 &7856525590659152474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 36
+  indentLevel: 0
+  storyText: "\uFF08\u8392\u5DF1\u597D\u611F\u5EA6\u5927\u5E45\u5EA6\u4E0A\u5347\uFF09"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2dcff8e74af04014eb588e88fc54984e, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000864f8e9e1748a39807861d0e60e29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 7856525590659152772}
+  suppressBlockAutoSelect: 0
+  keyPressType: 1
+  keyCode: 9
+--- !u!114 &7856525590659152472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 37
+  indentLevel: 0
+  text: "\u7247\u6BB53"
+  description: 
+  targetBlock: {fileID: 7856525590659152473}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+--- !u!114 &7856525590659152473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 569.7563
+    y: 16.47191
+    width: 82.92682
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 38
+  blockName: "\u7247\u6BB53"
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 7856525590659152478}
+  - {fileID: 7856525590659152479}
+  - {fileID: 7856525590659152476}
+  - {fileID: 7856525590659152477}
+  - {fileID: 7856525590659152467}
+  - {fileID: 7856525590659152466}
+  - {fileID: 7856525590659152470}
+  suppressAllAutoSelections: 0
+--- !u!114 &7856525590659152478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 39
+  indentLevel: 0
+  storyText: "\u7B11\u800C\u4E0D\u8BED\u7684\u70B9\u70B9\u5934\u540E\uFF0C\u9053\u201C\u516C\u5B50\uFF0C\u4ECA\u65E5\u5BB4\u8BF7\u4E0D\u8C08\u56FD\u4E8B\uFF01\u201D\u8BED\u95ED\u6307\u7740\u9762\u524D\u7684\u821E\u59EC\u95EE\u9053\uFF0C\u516C\u5B50\u89C9\u5F97\u4E09\u4F4D\u821E\u59EC\u5B70\u7F8E\uFF1F"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 7d8c2ab4d0c82b24fbdaaae727f016b6, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 40
+  indentLevel: 0
+  storyText: "\u6E05\u808C\u83B9\u9AA8\uFF0C\u8273\u8D28\u82F1\u8D44\uFF0C\u6DD1\u9038\u95F2\u534E\uFF0C\u5404\u6709\u5343\u79CB\u3002"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: cc527c3691860f8458ebf6d7cabde378, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 41
+  indentLevel: 0
+  storyText: "\u867D\u5404\u6709\u5343\u79CB\uFF0C\u4E0D\u77E5\u516C\u5B50\u66F4\u559C\u7D2B\u69D0\uFF0C\u91D1\u76CF\uFF0C\u8FD8\u662F\u5915\u989C\u3002"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: cc527c3691860f8458ebf6d7cabde378, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 0
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 42
+  indentLevel: 0
+  text: "\u7D2B\u69D0\u867D\u8273\uFF0C\u85BE\u65F6\u4E0D\u4E89\uFF0C\u63A5\u6C49\u7591\u661F\u843D\uFF0C\u4F9D\u697C\u4F3C\u6708\u60AC\u3002"
+  description: 
+  targetBlock: {fileID: 7856525590659152464}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+--- !u!114 &7856525590659152466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 43
+  indentLevel: 0
+  text: "\u767D\u9732\u6FE1\u516E\u5915\u989C\u4E3D\uFF0C\u4E00\u58F0\u5F39\u6307\u6CEA\u5982\u4E1D\uFF0C\u592E\u53CA\u4E1C\u98CE\u4F11\u9063\u7389\u4EBA\u77E5\u3002"
+  description: 
+  targetBlock: {fileID: 7856525590659152464}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+--- !u!114 &7856525590659152467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 44
+  indentLevel: 0
+  text: "\u91D1\u76CF\u71A0\u71A0\uFF0C\u707C\u707C\u5176\u534E\u3002\u7F57\u8863\u4F55\u98D8\u98D6\uFF0C\u8F7B\u88FE\u968F\u98CE\u8FD8\u3002\u707C\u7136\u4E00\u5207\u5904,\u5149\u660E\u707F\u70C2\u53BB\u3002"
+  description: 
+  targetBlock: {fileID: 7856525590659152464}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+--- !u!114 &7856525590659152464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 796.37476
+    y: -52.036636
+    width: 104.87804
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 61
+  blockName: "\u9009\u7F8E\u7ED3\u679C1"
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 7856525590659152465}
+  suppressAllAutoSelections: 0
+--- !u!114 &7856525590659152465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 62
+  indentLevel: 0
+  storyText: "\u5974\u5BB6\u7D2B\u69D0\u89C1\u8FC7\u516C\u5B50\uFF0C\u8392\u4FAF\u4EE4\u5974\u5BB6\u4E00\u8DEF\u7167\u987E\u516C\u5B50\u548C\u9C8D\u5148\u751F\u5317\u4E0A\u3002"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 3a016dec76786f84697406e956c6237e, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 63
+  indentLevel: 0
+  text: "\u8392\u4FAF\uFF0C\u5728\u4E0B\u5185\u5FC3\u7126\u707C\uFF0C\u6CA1\u6709\u95F2\u60C5\u96C5\u81F4\u5728\u6B64\u8C08\u98CE\u8BBA\u6708\uFF0C\u8BF7\u542C\u5728\u4E0B\u4E00\u8A00 "
+  description: 
+  targetBlock: {fileID: 7856525590659152471}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+--- !u!114 &7856525590659152471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 798.0831
+    y: 202.20938
+    width: 98.78048
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 64
+  blockName: "\u62D2\u7EDD\u9009\u7F8E"
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 7856525590659152468}
+  - {fileID: 7856525590659152469}
+  suppressAllAutoSelections: 0
+--- !u!114 &7856525590659152468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 65
+  indentLevel: 0
+  storyText: "\u4F60\u662F\u975E\u626B\u672C\u4FAF\u7684\u6027\u8D28\u561B\uFF1F"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 7d8c2ab4d0c82b24fbdaaae727f016b6, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 66
+  indentLevel: 0
+  storyText: "\u5411\u672C\u4FAF\u501F\u5343\u4E58\u4E4B\u6570\uFF1F\u6765\u4EBA\u5C0F\u767D\u516C\u5B50\u9189\u4E86\uFF0C\u5E26\u51FA\u53BB\u5427\u3002"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 7d8c2ab4d0c82b24fbdaaae727f016b6, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 67
+  indentLevel: 0
+  storyText: "\u5C31\u7B97\u6211\u6551\u5F97\u4E00\u4EBA\u53C8\u6709\u548C\u7528\uFF0C\u76F8\u6BD4\u8D77\u6765\uFF0C\u60F3\u8981\u62EF\u6551\u8FD9\u793C\u4E50\u5D29\u574F\u4E4B\u8BF4\uFF0C\u8FD8\u9700\u9690\u5FCD\uFF0C\u4E0D\u6613\u4E0E\u9F50\u5175\u8D77\u6B63\u9762\u51B2\u7A81\u3002"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: cc527c3691860f8458ebf6d7cabde378, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &7856525590659152769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856525590659152458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 68
+  indentLevel: 0
+  storyText: "\u8FD9\u5546\u7EA3\u738B\u5F97\u5B9D\u85CF\u4E5F\u8BB8\u662F\u673A\u9047\uFF0C\u53EF\u4EE5\u6539\u53D8\u4E9B\u4EC0\u4E48\u3002"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: cc527c3691860f8458ebf6d7cabde378, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
