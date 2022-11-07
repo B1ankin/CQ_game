@@ -155,6 +155,8 @@ public class BattleEffects
     private void DamageTarget(BattleCharacter caster, BattleCharacter target, Dictionary<string, int> tokenEffects)
     {
         // 
+        caster.SetAnimation(2); // base on weapon
+
         int acc = caster.characterData.acc;
         if (tokenEffects.ContainsKey("accuracy")) acc += tokenEffects["accuracy"];
         if ( target.GetEvade() < Random.Range(0, 100 + acc) || tokenEffects.ContainsKey("ignoreEvade"))
@@ -191,7 +193,10 @@ public class BattleEffects
 
                 if (target.characterData.healthSystem.IsDead())
                 {
-                    target.gameObject.transform.Rotate(new Vector3(0, 90, 0));
+
+                    //dead animation
+                    target.SetAnimation(4);
+
                     Debug.Log(target.characterData.CharacterName + "被击杀");
                 }
 
