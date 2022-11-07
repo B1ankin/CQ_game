@@ -833,6 +833,11 @@ public class BattleController : MonoBehaviour
 
         }
 
+        // finish moving action
+        currentchar.SetAnimation(0);
+
+
+
         if (currentchar.steps != 0)
         {
             state = BattlePhrase.WaitMove;
