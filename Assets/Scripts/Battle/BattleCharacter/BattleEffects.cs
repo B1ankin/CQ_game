@@ -183,6 +183,9 @@ public class BattleEffects
                 Debug.Log($"{target.characterData.CharacterName}受到了{caster.characterData.CharacterName}{caster.GetDamage()}点伤害，还剩下{target.characterData.healthSystem.health}点血");
 
 
+                // play hurt animation
+                target.SetAnimation(5);
+
                 // hurt check
                 
 

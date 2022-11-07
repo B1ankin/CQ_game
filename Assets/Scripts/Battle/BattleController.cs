@@ -196,6 +196,9 @@ public class BattleController : MonoBehaviour
 
         yield return new WaitForSeconds(2);
         GameObject.Find("AttackTextUI").GetComponent<Text>().text = "";
+
+        // reset animation to idle
+        focusedCharacter.SetAnimation(0);
     }
 
     
@@ -346,6 +349,8 @@ public class BattleController : MonoBehaviour
                     {
                         if (targetTile.standon != null)
                         {
+
+
                             // 攻击指示
                             Token t_action = null ;
                             List<Token> t_support_list  = new List<Token>();
@@ -363,6 +368,12 @@ public class BattleController : MonoBehaviour
                             } else
                             {
                                 StartCoroutine(DisplayAttackText($"{focusedCharacter.characterData.CharacterName}攻击了{targetTile.standon.characterData.CharacterName}，造成{focusedCharacter.GetDamage()}点伤害"));
+
+                                // process animation
+                                focusedCharacter.SetAnimation(2);
+
+
+
                                 beffects.tokenProcess(t_action, t_support_list, focusedCharacter, targetTile);
 
                                 // update UI

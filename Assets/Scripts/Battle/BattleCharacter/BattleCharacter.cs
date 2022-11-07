@@ -216,6 +216,10 @@ public class BattleCharacter:MonoBehaviour
                 bool ret = target.characterData.healthSystem.HealthUpdate(-1 * dmg);
                 Debug.Log($"{target.characterData.CharacterName}受到了{dmg}点伤害，还剩下{target.characterData.healthSystem.health}点血");
 
+                // do hurt animation
+                this.SetAnimation(5);
+
+
                 if( !ret)
                 {
                     target.gameObject.transform.Rotate(new Vector3(0, 90, 0));
@@ -263,8 +267,9 @@ public class BattleCharacter:MonoBehaviour
 
     }
 
-    public void SetAnimation(int animeInd)
+    public void SetAnimation(int animeInd, bool isLoop = true)
     {
+        Debug.Log($"test:{animeInd}");
         if (characterData.skinName.Length == 0)
         {
             Debug.Log("SO不包含模型皮肤文件名");
@@ -275,6 +280,11 @@ public class BattleCharacter:MonoBehaviour
 
             transform.Find(characterData.skinName).GetComponent<Animator>().SetInteger("animationStat",animeInd);
         }
+
+
+
+
+
     }
 
     private void UpdateSkin()
