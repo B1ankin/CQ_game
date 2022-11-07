@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b91b94f50ecc6c4997f9ab811b2ccbc, type: 3}
-  m_Name: "\u6D4B\u8BD5\u4EBA\u72691"
+  m_Name: "\u9C8D\u53D4\u7259"
   m_EditorClassIdentifier: 
+  characterId: 0
   characterName: "\u9C8D\u53D4\u7259"
   characterSprite: {fileID: 21300000, guid: 4bb02438d3c5bfb46a3d76b537e183d8, type: 3}
   characterAnimator: {fileID: 0}
+  skinName: "\u9C8D\u53D4\u7259"
   hpMax: 20
   spMax: 10
   str: 5
@@ -24,8 +26,8 @@ MonoBehaviour:
   spd: 9
   acc: 10
   moveRange: 7
-  Talents: 
-  Tokens: 
+  Talents: 0100000005000000
+  Tokens: 0100000002000000030000000400000005000000060000000700000008000000
   Head: 0
   Body: 0
   MainHand: 0
