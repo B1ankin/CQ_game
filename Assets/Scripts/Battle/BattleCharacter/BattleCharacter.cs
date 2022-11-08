@@ -216,8 +216,7 @@ public class BattleCharacter:MonoBehaviour
                 bool ret = target.characterData.healthSystem.HealthUpdate(-1 * dmg);
                 Debug.Log($"{target.characterData.CharacterName}受到了{dmg}点伤害，还剩下{target.characterData.healthSystem.health}点血");
 
-                // do hurt animation
-                this.SetAnimation(5);
+                
 
 
                 if( !ret)

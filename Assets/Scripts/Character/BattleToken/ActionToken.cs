@@ -11,6 +11,8 @@ public class ActionToken : Token
     public int dmgMulti;
     public bool isWait;
 
+    public int animationBindInd;
+
     /// <summary>
     /// 攻击区域
     /// 

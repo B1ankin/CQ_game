@@ -197,8 +197,6 @@ public class BattleController : MonoBehaviour
         yield return new WaitForSeconds(2);
         GameObject.Find("AttackTextUI").GetComponent<Text>().text = "";
 
-        // reset animation to idle
-        focusedCharacter.SetAnimation(0);
     }
 
     
@@ -364,14 +362,10 @@ public class BattleController : MonoBehaviour
                             // 执行token内容 
                             if( t_action == null)
                             {
-                                StartCoroutine(DisplayAttackText("Token池子空的"));
+                                StartCoroutine(DisplayAttackText("Token池子缺少Action 或 Special Token"));
                             } else
                             {
                                 StartCoroutine(DisplayAttackText($"{focusedCharacter.characterData.CharacterName}攻击了{targetTile.standon.characterData.CharacterName}，造成{focusedCharacter.GetDamage()}点伤害"));
-
-                                // process animation
-                                focusedCharacter.SetAnimation(2);
-
 
 
                                 beffects.tokenProcess(t_action, t_support_list, focusedCharacter, targetTile);

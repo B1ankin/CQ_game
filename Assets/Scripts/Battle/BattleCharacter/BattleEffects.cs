@@ -51,15 +51,10 @@ public class BattleEffects
             }
         }
 
-
-        // 统计效果
-        // token combo check
-        Dictionary<int, int> comboEffect = caster.characterData.tokenSystem.CheckCombo(supportTokens);
-        if (comboEffect.Count != 0)
-        {
-            Debug.Log("存在combo:" + comboEffect);
-        }
-
+        // play animation based on token type
+        ActionToken atoken = (ActionToken)actionToken;
+        caster.SetAnimation(atoken.animationBindInd);
+        
         // token effect sum
         Dictionary<string, int> tokenEffects = new Dictionary<string, int>();
         foreach (var i in supportTokens)
@@ -154,8 +149,6 @@ public class BattleEffects
 
     private void DamageTarget(BattleCharacter caster, BattleCharacter target, Dictionary<string, int> tokenEffects)
     {
-        // 
-        caster.SetAnimation(2); // base on weapon
 
         int acc = caster.characterData.acc;
         if (tokenEffects.ContainsKey("accuracy")) acc += tokenEffects["accuracy"];
