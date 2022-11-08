@@ -291,43 +291,48 @@ public class BattleController : MonoBehaviour
                 // 判断鼠标朝向
                 if (norm.x > 0)
                 {
-                    newTokenTargetDirection = 0;
+                    newTokenTargetDirection = 4;
                 }
                 else
                 {
-                    newTokenTargetDirection = 1;
-                }
-                if (norm.y > Mathf.Abs(norm.x))
-                {
                     newTokenTargetDirection = 2;
                 }
-                else if (norm.y * -1 > Mathf.Abs(norm.x))
+                if (norm.z > Mathf.Abs(norm.x))
                 {
                     newTokenTargetDirection = 3;
                 }
-
-
-                if (tokenTargetDirection != newTokenTargetDirection)
+                else if (norm.z * -1 > Mathf.Abs(norm.x))
                 {
+                    newTokenTargetDirection = 1;
+                }
+
+
+                if (true)//tokenTargetDirection != newTokenTargetDirection)
+                {
+                    focusedCharacter.SetDirection(newTokenTargetDirection);
+
                     tokenTargetDirection = newTokenTargetDirection;
                     List<Vector3Int> tiles = new List<Vector3Int>();
-                    if (tokenTargetDirection == 0)
+                    /*if (tokenTargetDirection == 4)
                     {
                         tiles.Add(focusedCharacter.activeTile.gridPos + new Vector3Int(1, 0, 0));
+                        tiles.Add(focusedCharacter.activeTile.gridPos + new Vector3Int(1, 0, 0));
                     }
-                    else if(tokenTargetDirection == 1)
+                    else if(tokenTargetDirection == 2)
                     {
                         tiles.Add(focusedCharacter.activeTile.gridPos + new Vector3Int(-1, 0, 0));
-                    } else if (tokenTargetDirection == 2)
+                    } else if (tokenTargetDirection == 3)
                     {
                         tiles.Add(focusedCharacter.activeTile.gridPos + new Vector3Int(0,0,1));
-                    } else if (tokenTargetDirection == 3)
+                    } else if (tokenTargetDirection == 1)
                     {
                         tiles.Add(focusedCharacter.activeTile.gridPos + new Vector3Int(0, 0, -1));
                     } else
                     {
                         Debug.Log("光标相对方向判断错误");
-                    }
+                    }*/
+
+                    tiles.Add(battleTile.gridPos);
 
 
                     BattleManager.Instance.ClearAllTileHighlighter();
