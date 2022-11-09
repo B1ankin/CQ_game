@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Character_Peasant.018_Bake1_baked
+    second: {fileID: 2100000, guid: e7993d129b175844ca000bcdc9cdf40c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

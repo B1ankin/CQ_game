@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SM_Chr_Fairy_01.001_Bake1_baked
+    second: {fileID: 2100000, guid: 9dcb5aa9b29605646b44f40f76e3c32d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

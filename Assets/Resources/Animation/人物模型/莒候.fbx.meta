@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Character_Warrior.009_Bake1_baked
+    second: {fileID: 2100000, guid: ee08fc0083b5a5640a7c9abc0c835c69, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
