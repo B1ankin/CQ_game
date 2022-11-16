@@ -105,9 +105,9 @@ Material:
     - _LightProbeContribution: 3.5
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _OutlineDepthSensitivity: 0.234
+    - _OutlineDepthSensitivity: 0.118
     - _OutlineNormalsSensitivity: 1
-    - _OutlineThickness: 1
+    - _OutlineThickness: 1.62
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0

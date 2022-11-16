@@ -101,6 +101,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 43f5bde1826f63a419c759ac1fc4cfd2,
         type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 43f5bde1826f63a419c759ac1fc4cfd2,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: db6a318090c430542bd5a31e5b5f49cf, type: 2}
@@ -181,6 +186,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 43f5bde1826f63a419c759ac1fc4cfd2,
         type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 43f5bde1826f63a419c759ac1fc4cfd2,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: db6a318090c430542bd5a31e5b5f49cf, type: 2}
@@ -258,6 +268,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -323.823
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 43f5bde1826f63a419c759ac1fc4cfd2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 43f5bde1826f63a419c759ac1fc4cfd2,
         type: 3}
@@ -356,6 +371,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: fc74ecf7467536c44a7b26898e65f4da,
         type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: fc74ecf7467536c44a7b26898e65f4da,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 28f83d9e37a7ccc43973d8e7028292f1, type: 2}
@@ -436,6 +456,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 43f5bde1826f63a419c759ac1fc4cfd2,
         type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 43f5bde1826f63a419c759ac1fc4cfd2,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: db6a318090c430542bd5a31e5b5f49cf, type: 2}
@@ -513,6 +538,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -139.073
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 43f5bde1826f63a419c759ac1fc4cfd2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 43f5bde1826f63a419c759ac1fc4cfd2,
         type: 3}

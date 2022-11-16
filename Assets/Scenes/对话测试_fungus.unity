@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 203844588}
-  m_IndirectSpecularColor: {r: 0.1802856, g: 0.22571555, b: 0.30692363, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028586, g: 0.22571592, b: 0.3069243, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -53078,7 +53078,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1453700346}
   selectedCommands:
-  - {fileID: 1453700383}
+  - {fileID: 1453700348}
   variables: []
   description: 
   stepPause: 0
@@ -53179,7 +53179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 34
   indentLevel: 0
-  storyText: "\u6765\u4EBA\u5C0F\u767D\u516C\u5B50\u9189\u4E86\uFF0C\u5E26\u51FA\u53BB\u5427\u3002"
+  storyText: "\u6765\u4EBA\uFF01 \u5C0F\u767D\u516C\u5B50\u9189\u4E86\uFF0C\u5E26\u51FA\u53BB\u5427\u3002"
   description: 
   character: {fileID: 1998096508}
   portrait: {fileID: 21300000, guid: 7d8c2ab4d0c82b24fbdaaae727f016b6, type: 3}
@@ -53233,7 +53233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 32
   indentLevel: 0
-  storyText: "\u4F60\u662F\u975E\u626B\u672C\u4FAF\u7684\u6027\u8D28\u561B\uFF1F\r"
+  storyText: "\u4F60\u662F\u975E\u626B\u672C\u4FAF\u7684\u5174\u81F4\u561B\uFF1F\r"
   description: 
   character: {fileID: 1998096508}
   portrait: {fileID: 21300000, guid: 7d8c2ab4d0c82b24fbdaaae727f016b6, type: 3}
