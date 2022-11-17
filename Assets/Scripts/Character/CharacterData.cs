@@ -14,7 +14,7 @@ public class CharacterData
     //animation, image, audio folder
     //string characterResource;
     //Animator charAnimator;
-    Sprite characterImage;
+    public Sprite characterImage;
 
     public HealthSystem healthSystem; // Health  
     public SanitySystem sanitySystem; // Sanity & Stamina

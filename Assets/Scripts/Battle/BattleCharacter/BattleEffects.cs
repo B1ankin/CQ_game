@@ -53,7 +53,6 @@ public class BattleEffects
 
         // play animation based on token type
         ActionToken atoken = (ActionToken)actionToken;
-        caster.SetAnimation(atoken.animationBindInd);
         
         // token effect sum
         Dictionary<string, int> tokenEffects = new Dictionary<string, int>();
@@ -91,10 +90,10 @@ public class BattleEffects
             BattleController.Instance.MoveToTile1(caster, BattleManager.Instance.GetTileByPos(caster.activeTile.gridPos + new Vector3Int(-1 * tokenEffects["moveLeft"], 0, 0)));
         }
 
-        
 
 
 
+        caster.SetAnimation(atoken.animationBindInd);
         // 执行伤害
         DamageTarget(caster, targetTile.standon, tokenEffects);
 
@@ -179,6 +178,7 @@ public class BattleEffects
 
 
                 // play hurt animation
+                // when caster animation finish
                 target.SetAnimation(5);
 
                 // hurt check

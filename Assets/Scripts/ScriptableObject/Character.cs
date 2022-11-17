@@ -13,6 +13,7 @@ public class Character : ScriptableObject
 
     // portrait
     public Sprite characterSprite;
+    public Sprite characterSpritemini;
 
     // battle animation
     public Animator characterAnimator;

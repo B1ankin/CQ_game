@@ -23,4 +23,5 @@ MonoBehaviour:
   acc: 60
   dmgMulti: 100
   isWait: 0
+  animationBindInd: 2
   shape: 1

@@ -9,6 +9,7 @@ public class BattleCharacter:MonoBehaviour
     // data storage
     public CharacterData characterData;
     public Character cc; //test-only 
+    private Character c2;
 
     public int Team;
 
@@ -33,14 +34,20 @@ public class BattleCharacter:MonoBehaviour
         etable = new EntryTable();
         LoadCharacter(null); //test-only
         faceDirection = 1;
-        UpdateSkin();
+        
+    }
+
+    private void FixedUpdate()
+    {
+        if (c2 != cc) LoadCharacter(cc);
     }
 
     //导入人物数据
     void LoadCharacter(Character character)
     {
         this.characterData = new CharacterData(cc); //test-only
-
+        c2 = cc;
+        UpdateSkin();
         UpdateAllAddonEntries();
 
         //this.characterData = new CharacterData(character);
@@ -197,6 +204,7 @@ public class BattleCharacter:MonoBehaviour
 
     public bool TestDamage(BattleCharacter target)
     {
+        this.SetAnimation(2);
         if(target.GetEvade() > Random.Range(0, 100))
         {
             Debug.Log(target.characterData.CharacterName + "闪避了伤害");
@@ -215,8 +223,9 @@ public class BattleCharacter:MonoBehaviour
                 }
                 bool ret = target.characterData.healthSystem.HealthUpdate(-1 * dmg);
                 Debug.Log($"{target.characterData.CharacterName}受到了{dmg}点伤害，还剩下{target.characterData.healthSystem.health}点血");
-
+                target.SetAnimation(5);
                 
+                if (target.characterData.healthSystem.IsDead()) target.SetAnimation(4);
 
 
                 if( !ret)
@@ -288,6 +297,10 @@ public class BattleCharacter:MonoBehaviour
 
     private void UpdateSkin()
     {
+        for ( int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
         transform.Find(characterData.skinName).gameObject.SetActive(true);
     }
 

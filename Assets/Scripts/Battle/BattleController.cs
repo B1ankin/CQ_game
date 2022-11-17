@@ -715,6 +715,7 @@ public class BattleController : MonoBehaviour
 
         // character panel
         // 现在用一个头像
+        GameObject.Find("CharacterImage").GetComponent<Image>().sprite = focusedCharacter.characterData.characterImage;
         GameObject.Find("CharacterNameUI").GetComponent<Text>().text = focusedCharacter.characterData.CharacterName;
         GameObject.Find("HPBarUI").transform.localScale = new Vector3(focusedCharacter.GetHealthPercent(), 1,1);
         GameObject.Find("SPBarUI").transform.localScale = new Vector3(focusedCharacter.GetSanityPercent(), 1, 1);
@@ -974,9 +975,34 @@ public class BattleController : MonoBehaviour
         Debug.Log(GameObject.Find("PlayerTeam").transform.GetChild(0).GetComponent<BattleCharacter>().activeTile.gridPos);
         isMoving = true;
         yield return StartCoroutine(MoveByPath(focusedCharacter, path));
+        // face targetCharacter
+        var targetPos = target.activeTile.gridPos;
+        var charPos = focusedCharacter.activeTile.gridPos;
+        var norm = (targetPos - charPos);
+        var newTokenTargetDirection = -1;
+
+        // 判断鼠标朝向
+        if (norm.x > 0)
+        {
+            newTokenTargetDirection = 4;
+        }
+        else
+        {
+            newTokenTargetDirection = 2;
+        }
+        if (norm.z > Mathf.Abs(norm.x))
+        {
+            newTokenTargetDirection = 3;
+        }
+        else if (norm.z * -1 > Mathf.Abs(norm.x))
+        {
+            newTokenTargetDirection = 1;
+        }
+        focusedCharacter.SetDirection(newTokenTargetDirection);
+
 
         // item & attack\
-        if(target.GetDistance(focusedCharacter) < 2) // 横竖范围2确认
+        if (target.GetDistance(focusedCharacter) < 2) // 横竖范围2确认
         {
             // 攻击计算和执行
             var alive = focusedCharacter.TestDamage(target); // 默认ai的技能
