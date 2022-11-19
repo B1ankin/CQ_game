@@ -44,7 +44,7 @@ public class TokenPoolUI : MonoBehaviour, IDropHandler
                     if (actionT.GetChild(i).childCount != 0) continue;
 
                     eventData.pointerDrag.transform.SetParent(actionT.GetChild(i));
-                    eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector3(10, -10, 0);
+                    eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector3(0,0, 0);
                 }
             } else if (temptype == typeof(SupportToken))
             {
@@ -55,7 +55,7 @@ public class TokenPoolUI : MonoBehaviour, IDropHandler
                     if (supportT.GetChild(i).childCount != 0) continue;
 
                     eventData.pointerDrag.transform.SetParent(supportT.GetChild(i));
-                    eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector3(10, -10, 0);
+                    eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0, 0);
                 }
             } else if (temptype == typeof(SpecialToken))
             {
@@ -66,7 +66,7 @@ public class TokenPoolUI : MonoBehaviour, IDropHandler
                     if (actionT.GetChild(i).childCount != 0) continue;
 
                     eventData.pointerDrag.transform.SetParent(actionT.GetChild(i));
-                    eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector3(10, -10, 0);
+                    eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0, 0);
                 }
             }
 
@@ -101,7 +101,8 @@ public class TokenPoolUI : MonoBehaviour, IDropHandler
             tempSlot.transform.SetParent(action, false);
             var tempToken = Instantiate(tokenPrefab);
             tempToken.transform.SetParent(tempSlot.transform, false);
-            tempToken.GetComponent<RectTransform>().anchoredPosition = new Vector3(10, 10, 0);
+            tempToken.GetComponent<RectTransform>().pivot = new Vector2(0, 0);
+            tempToken.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0, 0);
 
             tempToken.GetComponent<TokenUI>().UpdateToken(actionTokens[i]);
         }
@@ -118,7 +119,8 @@ public class TokenPoolUI : MonoBehaviour, IDropHandler
             tempSlot.transform.SetParent(support, false);
             var tempToken = Instantiate(tokenPrefab);
             tempToken.transform.SetParent(tempSlot.transform, false);
-            tempToken.GetComponent<RectTransform>().anchoredPosition = new Vector3(10, 10, 0);
+            tempToken.GetComponent<RectTransform>().pivot = new Vector2(0, 0);
+            tempToken.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0, 0);
 
             tempToken.GetComponent<TokenUI>().UpdateToken(supportTokens[i]);
         }
@@ -135,7 +137,8 @@ public class TokenPoolUI : MonoBehaviour, IDropHandler
             tempSlot.transform.SetParent(special, false);
             var tempToken = Instantiate(tokenPrefab);
             tempToken.transform.SetParent(tempSlot.transform, false);
-            tempToken.GetComponent<RectTransform>().anchoredPosition = new Vector3(10, 10, 0);
+            tempToken.GetComponent<RectTransform>().pivot = new Vector2(0, 0);
+            tempToken.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0, 0);
 
             tempToken.GetComponent<TokenUI>().UpdateToken(specialTokens[i]);
         }

@@ -93,7 +93,7 @@ public class BattleEffects
 
 
 
-        caster.SetAnimation(atoken.animationBindInd);
+        caster.SetAnimation(atoken.animationBindInd, false, true);
         // 执行伤害
         DamageTarget(caster, targetTile.standon, tokenEffects);
 
@@ -179,19 +179,8 @@ public class BattleEffects
 
                 // play hurt animation
                 // when caster animation finish
-                target.SetAnimation(5);
 
-                // hurt check
-                
-
-                if (target.characterData.healthSystem.IsDead())
-                {
-
-                    //dead animation
-                    target.SetAnimation(4);
-
-                    Debug.Log(target.characterData.CharacterName + "被击杀");
-                }
+                target.HitAnimationCheck(caster);
 
             }
             else

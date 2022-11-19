@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterId: 0
   characterName: "\u9C8D\u53D4\u7259"
-  characterSprite: {fileID: 21300000, guid: 4bb02438d3c5bfb46a3d76b537e183d8, type: 3}
+  characterSprite: {fileID: 21300000, guid: bbde7ece51001d849b99b32cff1fda02, type: 3}
+  characterSpritemini: {fileID: 21300000, guid: 0d4a9bb1e474ce04c943713b0e002543,
+    type: 3}
   characterAnimator: {fileID: 0}
   skinName: "\u9C8D\u53D4\u7259"
   hpMax: 20

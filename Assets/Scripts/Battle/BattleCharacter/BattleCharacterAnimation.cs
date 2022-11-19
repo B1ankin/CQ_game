@@ -31,23 +31,4 @@ public class BattleCharacterAnimation : MonoBehaviour
         }
     }
 
-    public void MoveAnime()
-    {
-
-    }
-
-    public void WalkAnime()
-    {
-
-    }
-
-    public void AttackAnime()
-    {
-
-    }
-
-    public void HurtAnime()
-    {
-
-    }
 }

@@ -10,22 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b91b94f50ecc6c4997f9ab811b2ccbc, type: 3}
-  m_Name: soilder_1
+  m_Name: "\u9C8D\u53D4\u7259 1"
   m_EditorClassIdentifier: 
-  characterName: "\u58EB\u5175\u7532"
-  characterSprite: {fileID: 21300000, guid: f050fc5e4678bf045bcdc6bd9fe90c00, type: 3}
+  characterId: 0
+  characterName: "\u8392\u5DF1"
+  characterSprite: {fileID: 21300000, guid: aee5e1e8a24457d41b9130abb58e2663, type: 3}
+  characterSpritemini: {fileID: 21300000, guid: 423923d15da560040bd1aae8a58b004e,
+    type: 3}
   characterAnimator: {fileID: 0}
-  hpMax: 0
-  spMax: 0
-  str: 0
-  dex: 0
-  critChance: 0
-  critMulti: 0
-  spd: 0
-  acc: 0
-  moveRange: 0
-  Talents: 
-  Tokens: 
+  skinName: "\u8392\u5DF1"
+  hpMax: 20
+  spMax: 10
+  str: 5
+  dex: 4
+  critChance: 15
+  critMulti: 150
+  spd: 9
+  acc: 10
+  moveRange: 7
+  Talents: 0100000005000000
+  Tokens: 0100000002000000030000000400000005000000060000000700000008000000
   Head: 0
   Body: 0
   MainHand: 0

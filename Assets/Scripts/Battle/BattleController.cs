@@ -124,7 +124,6 @@ public class BattleController : MonoBehaviour
                     if (battleTile.standon == null)
                     {
                         var testc = Instantiate(BattleCharacterModel, GameObject.Find("PlayerTeam").transform).GetComponent<BattleCharacter>();
-                        testc.characterData.CharacterName = "player" + UnityEngine.Random.Range(0, 10);
                         testc.activeTile = battleTile;
                         PositionCharacterOnTile(testc, battleTile);
                         CharacterList.Add(testc);
@@ -144,7 +143,6 @@ public class BattleController : MonoBehaviour
                     {
                         var testc = Instantiate(BattleCharacterModel, GameObject.Find("AITeam").transform).GetComponent<BattleCharacter>();
                         testc.Team = 0;
-                        testc.characterData.CharacterName = "AI" + UnityEngine.Random.Range(0, 10);
                         testc.activeTile = battleTile;
                         PositionCharacterOnTile(testc, battleTile);
                         CharacterList.Add(testc);

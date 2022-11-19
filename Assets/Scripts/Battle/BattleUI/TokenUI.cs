@@ -41,7 +41,38 @@ public class TokenUI : MonoBehaviour, IPointerDownHandler, IPointerClickHandler,
         {
             //GetComponent<Image>().color = Color.yellow;
             var ttoken = (SupportToken)token;
-            tokenEffectsContainer.text = ttoken.tokenEffects.ToString();
+            tokenEffectsContainer.text = "";
+            foreach (var i in ttoken.tokenEffects)
+            {
+                if (i.x  == 17)
+                {
+                    tokenEffectsContainer.text += $"前移 {i.y}\n";
+                }
+                else if (i.x == 9)
+                {
+                    tokenEffectsContainer.text += $"命中 {i.y}\n";
+
+                }
+                else if (i.x == 18)
+                {
+                    tokenEffectsContainer.text += $"后退 {i.y}\n";
+
+                }
+                else if (i.x == 23)
+                {
+                    tokenEffectsContainer.text += $"精神伤害 {i.y}\n";
+                }
+                else if (i.x == 48)
+                {
+                    tokenEffectsContainer.text += $"伤害倍率 {i.y}\n";
+                }
+                else if (i.x == 12)
+                {
+                    tokenEffectsContainer.text += $"消耗 {i.y}\n";
+
+                }
+
+            }
 
         }
         else if (token.GetType() == typeof(SpecialToken))
@@ -49,11 +80,8 @@ public class TokenUI : MonoBehaviour, IPointerDownHandler, IPointerClickHandler,
             //GetComponent<Image>().color = Color.green;
             var ttoken = (SpecialToken)token;
             string tokentext = "";
-            tokentext += $"命中: {ttoken.acc}\n";
-            tokentext += $"类型: {ttoken.itemType}\n";
-            tokentext += $"范围类型: {ttoken.effectShape}\n";
-            tokentext += $"目标类型: {ttoken.targetingType}\n";
-            tokentext += ttoken.tokenEffects.ToString();
+            tokentext += $"类型: 闪避\n";
+            tokentext += $"效果: 对自身释放一次闪避\n";
 
             tokenEffectsContainer.text = tokentext;
 

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 /// <summary>
 /// 战斗人物
@@ -223,10 +224,9 @@ public class BattleCharacter:MonoBehaviour
                 }
                 bool ret = target.characterData.healthSystem.HealthUpdate(-1 * dmg);
                 Debug.Log($"{target.characterData.CharacterName}受到了{dmg}点伤害，还剩下{target.characterData.healthSystem.health}点血");
-                target.SetAnimation(5);
-                
-                if (target.characterData.healthSystem.IsDead()) target.SetAnimation(4);
 
+                target.HitAnimationCheck(this);
+                
 
                 if( !ret)
                 {
@@ -275,7 +275,7 @@ public class BattleCharacter:MonoBehaviour
 
     }
 
-    public void SetAnimation(int animeInd, bool isLoop = true)
+    public void SetAnimation(int animeInd, bool isLoop = true, bool isAttack = false)
     {
         Debug.Log($"test:{animeInd}");
         if (characterData.skinName.Length == 0)
@@ -288,11 +288,37 @@ public class BattleCharacter:MonoBehaviour
 
             transform.Find(characterData.skinName).GetComponent<Animator>().SetInteger("animationStat",animeInd);
         }
+        if (isAttack)
+        {
+            transform.Find(characterData.skinName).GetComponent<Animator>().SetBool("isAttack", true);
+        }
 
 
 
+    }
 
+    public void HitAnimationCheck(BattleCharacter caster)
+    {
+            StartCoroutine(WaitAnimation(caster));
+    }
 
+    IEnumerator WaitAnimation(BattleCharacter caster)
+    {
+        Animator targetAnime = transform.Find(characterData.skinName).GetComponent<Animator>();
+        Animator casterAnime = caster.transform.Find(caster.characterData.skinName).GetComponent<Animator>();
+        while (casterAnime.GetBool("isAttack"))
+        {
+            yield return new WaitForSeconds(.2f);
+        }
+        SetAnimation(5);
+        if (characterData.healthSystem.IsDead())
+        {
+
+            //dead animation
+            SetAnimation(4);
+
+            Debug.Log(characterData.CharacterName + "被击杀");
+        }
     }
 
     private void UpdateSkin()
