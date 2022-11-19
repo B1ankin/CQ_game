@@ -108,11 +108,97 @@ public class TokenUI : MonoBehaviour, IPointerDownHandler, IPointerClickHandler,
     public void OnPointerClick(PointerEventData eventData)
     {
         // in pool, move to queue
+        if (eventData.pointerDrag == null)
+        {
+            return;
+        }
 
         // in queue 
         if (eventData.pointerDrag.transform.IsChildOf(GameObject.Find("TokenQueueUI").transform))
         {
             Debug.Log("from queue");
+            //check type
+            var temptype = eventData.pointerDrag.GetComponent<TokenUI>().GetToken().GetType();
+            Debug.Log(temptype);
+            GameObject tokenPool = GameObject.Find("TokenPoolUI");
+
+            GameObject.Find("TokenQueueUI").GetComponent<TokenQueueUI>().
+            RemoveTokenFromQueue(eventData.pointerDrag.GetComponent<TokenUI>().slotIndex);
+
+            if (temptype == typeof(ActionToken))
+            {
+                Transform actionT = tokenPool.transform.GetChild(0);
+                for (int i = actionT.childCount - 1; i >= 0; i--)
+                {
+                    if (actionT.GetChild(i).childCount != 0) continue;
+
+                    eventData.pointerDrag.transform.SetParent(actionT.GetChild(i));
+                    eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0, 0);
+                }
+            }
+            else if (temptype == typeof(SupportToken))
+            {
+                Transform supportT = tokenPool.transform.GetChild(1);
+
+                for (int i = supportT.childCount - 1; i >= 0; i--)
+                {
+                    if (supportT.GetChild(i).childCount != 0) continue;
+
+                    eventData.pointerDrag.transform.SetParent(supportT.GetChild(i));
+                    eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0, 0);
+                }
+            }
+            else if (temptype == typeof(SpecialToken))
+            {
+                Transform specialT = tokenPool.transform.GetChild(2);
+
+                for (int i = specialT.childCount - 1; i >= 0; i--)
+                {
+                    if (specialT.GetChild(i).childCount != 0) continue;
+
+                    eventData.pointerDrag.transform.SetParent(specialT.GetChild(i));
+                    eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0, 0);
+                }
+            }
+
+
+
+
+        } else
+        {
+            Debug.Log("from pool");
+            TokenQueueUI tokenQueueUI = GameObject.Find("TokenQueueUI").GetComponent<TokenQueueUI>();
+
+            bool typecheck = false;
+            foreach (var token in tokenQueueUI.tokenQueue)
+            {
+                if (token.GetType() == typeof(ActionToken) || token.GetType() == typeof(SpecialToken))
+                {
+                    typecheck = true;
+                    break;
+                }
+            }
+            if (typecheck)
+            {
+                if (eventData.pointerDrag.GetComponent<TokenUI>().GetToken().GetType() != typeof(SupportToken)) return;
+            }
+            //check pos
+
+
+            for (int i = 0; i < tokenQueueUI.transform.childCount; i++)
+            {
+                if (tokenQueueUI.transform.GetChild(i).childCount != 0) continue;
+                eventData.pointerDrag.transform.SetParent(tokenQueueUI.transform.GetChild(i));
+                eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0, 0);
+            }
+
+            tokenQueueUI.tokenQueue.Add(eventData.pointerDrag.GetComponent<TokenUI>().GetToken());
+            eventData.pointerDrag.GetComponent<TokenUI>().slotIndex = tokenQueueUI.tokenQueue.Count - 1;
+                    
+
+
+
+
         }
 
     }

@@ -570,11 +570,13 @@ public class BattleController : MonoBehaviour
 
             if (character1.Team == 1)
             {
-                a.GetComponent<Image>().color = new Color(0, 0, 1, .4f);
+                a.GetComponent<Image>().color = new Color(0, 0, 1, .2f);
+                a.transform.GetChild(0).GetComponent<Image>().sprite = character1.characterData.characterImage;
             }
             else
             {
-                a.GetComponent<Image>().color = new Color(1, 0, 0, .4f);
+                a.GetComponent<Image>().color = new Color(1, 0, 0, .2f);
+                a.transform.GetChild(0).GetComponent<Image>().sprite = character1.characterData.characterImage;
             }
 
 
