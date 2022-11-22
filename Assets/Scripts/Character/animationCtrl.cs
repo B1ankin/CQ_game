@@ -10,6 +10,8 @@ public class animationCtrl : MonoBehaviour
     Animator animator;
     [SerializeField] private LayerMask layermask;
 
+    [SerializeField] private bool Movable = true;
+
 
     Vector2 smoothDeltaPosition = Vector2.zero;
     Vector2 velocity = Vector2.zero;
@@ -21,7 +23,7 @@ public class animationCtrl : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(agent.velocity.magnitude);
+        //Debug.Log(agent.velocity.magnitude);
         animator.SetFloat("vol", agent.velocity.magnitude);
 
 
@@ -29,13 +31,31 @@ public class animationCtrl : MonoBehaviour
         {
             Ray mousePos = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(mousePos, out hit, 200, layermask))
+            if (Physics.Raycast(mousePos, out hit, 200))
             {
-                agent.destination = hit.point;
-                Debug.Log(hit.point);
+                Debug.Log(hit.collider.name);
+                if (hit.collider.gameObject.tag == "NPC" || hit.collider.gameObject.layer == 5 ) // UI layer check
+                {
+                    Debug.Log(hit.collider.name);
+                } else
+                {
+                    Debug.Log(hit.collider.gameObject.layer);
+
+                    if (Movable) agent.destination = hit.point;
+                }
+                //Debug.Log(hit.point);
 
             }
         }
     }
 
+    public void faceTarget()
+    {
+        Ray mousePos = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(mousePos, out hit, 200, layermask))
+        {
+            transform.LookAt(hit.point);
+        }
+    }
 }
