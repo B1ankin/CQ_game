@@ -27,19 +27,18 @@ public class animationCtrl : MonoBehaviour
         animator.SetFloat("vol", agent.velocity.magnitude);
 
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButton(0))
         {
             Ray mousePos = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(mousePos, out hit, 200))
             {
                 Debug.Log(hit.collider.name);
-                if (hit.collider.gameObject.tag == "NPC" || hit.collider.gameObject.layer == 5 ) // UI layer check
+                if (hit.collider.gameObject.tag == "NPC"  ) // UI layer check
                 {
                     Debug.Log(hit.collider.name);
                 } else
                 {
-                    Debug.Log(hit.collider.gameObject.layer);
 
                     if (Movable) agent.destination = hit.point;
                 }
@@ -56,6 +55,7 @@ public class animationCtrl : MonoBehaviour
         if (Physics.Raycast(mousePos, out hit, 200, layermask))
         {
             transform.LookAt(hit.point);
+            
         }
     }
 }
