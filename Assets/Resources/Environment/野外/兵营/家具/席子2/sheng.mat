@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: sheng
-  m_Shader: {fileID: -6465566751694194690, guid: bf36778a400a0894b86a1f49c422fa62,
+  m_Shader: {fileID: -6465566751694194690, guid: 69a3247c60afdc342831c30539f800e0,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -139,7 +139,7 @@ Material:
     - _Metallic: 0
     - _OPACITY: 1
     - _OcclusionStrength: 1
-    - _OutlineDepthSensitivity: 0.261
+    - _OutlineDepthSensitivity: 0.327
     - _OutlineNormalsSensitivity: 1
     - _OutlineThickness: 1.16
     - _Parallax: 0.005
@@ -161,7 +161,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EMISSION_COLOR: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MainColor: {r: 0.764151, g: 0.764151, b: 0.764151, a: 0}
+    - _MainColor: {r: 0.5754717, g: 0.53421146, b: 0.53421146, a: 0}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _SPECULAR_COLOR: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
