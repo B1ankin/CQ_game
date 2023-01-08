@@ -212,7 +212,7 @@ Material:
     - _Color1: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HueVariation: {r: 0, g: 1, b: 0.8344829, a: 0.209}
-    - _MainColor: {r: 0.3962264, g: 0.3776723, b: 0.18091847, a: 0}
+    - _MainColor: {r: 0.26415092, g: 0.25064886, b: 0.11562831, a: 0}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 0}
